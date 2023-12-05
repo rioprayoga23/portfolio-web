@@ -5,8 +5,8 @@ import Link from "next/link";
 
 //* images
 import {
-  GithubBlueIcon,
   GithubIcon,
+  GithubWhiteIcon,
   MoonIcon,
   SunIcon,
 } from "@/configs/images";
@@ -42,7 +42,7 @@ const Navbar = () => {
 
           <Link href="#" className="flex items-center font-semibold mt-1">
             <Image
-              src={theme === "light" ? GithubIcon : GithubBlueIcon}
+              src={theme === "cupcake" ? GithubIcon : GithubWhiteIcon}
               alt="github icon"
               width={25}
               height={25}
@@ -52,10 +52,10 @@ const Navbar = () => {
           </Link>
           <button
             className="mt-1"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            onClick={() => setTheme(theme === "cupcake" ? "dark" : "cupcake")}
           >
             <Image
-              src={theme === "light" ? MoonIcon : SunIcon}
+              src={theme === "cupcake" ? MoonIcon : SunIcon}
               alt="theme icon"
               width={25}
               height={25}

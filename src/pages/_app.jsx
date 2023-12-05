@@ -14,10 +14,10 @@ const theme = extendTheme({
 
 export default function App({ Component, pageProps }) {
   return (
-    // <ChakraProvider theme={theme}>
-    <ThemeProvider>
-      <Component {...pageProps} />
-    </ThemeProvider>
-    // </ChakraProvider>
+    <ChakraProvider theme={theme}>
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </ChakraProvider>
   );
 }
