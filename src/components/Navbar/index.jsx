@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar flex w-full sticky top-0 z-30 p-3 items-center drop-shadow-xl backdrop-blur-md justify-center">
-      <div className="w-[60%]">
+      <div className="container md:w-[80%] lg:w-[70%] xl:w-[60%]">
         <div className="flex flex-1 items-center gap-5">
           <Link
             href="/"
@@ -31,7 +31,8 @@ const Navbar = () => {
             Rio Prayoga
           </Link>
         </div>
-        <div className="flex items-center gap-5">
+
+        <div className="hidden md:flex items-center gap-5">
           <Link href="#" className="font-semibold mt-1">
             About
           </Link>
