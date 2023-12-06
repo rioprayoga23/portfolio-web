@@ -45,9 +45,9 @@ const Workspace = () => {
 
       const target = new THREE.Vector3(-0.5, 1.2, 0);
       const initialCameraPosition = new THREE.Vector3(
-        200, // Adjusted the factor from 20 to 5
+        100, // Adjusted the factor from 20 to 5
         5, // Keep the same height
-        200
+        100
       );
 
       // 640 -> 240
@@ -90,7 +90,7 @@ const Workspace = () => {
           const p = initialCameraPosition;
           const rotSpeed = -easeOutCirc(frame / 210) * Math.PI * 20;
 
-          camera.position.y = 80;
+          camera.position.y = 50;
           camera.position.x =
             p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed);
           camera.position.z =

@@ -2,25 +2,35 @@ import { forwardRef } from "react";
 import { Box, Spinner } from "@chakra-ui/react";
 
 export const WorkspaceSpinner = () => (
-  <Spinner
-    size="xl"
-    position="absolute"
-    left="50%"
-    top="30%"
-    ml="calc(0px - var(--spinner-size) / 2)"
-    mt={"-100px"}
-    color="white"
-  />
+  <Box
+    className="workspaceBox"
+    m="auto"
+    mt={["-40px"]}
+    mb={["-230px"]}
+    w={[280, 480, 640]}
+    h={[280, 480, 640]}
+    position="relative"
+  >
+    <Spinner
+      size="xl"
+      position="absolute"
+      left="50%"
+      top="40%"
+      ml="calc(0px - var(--spinner-size) / 2)"
+      mt="calc(0px - var(--spinner-size))"
+      color="white"
+    />
+  </Box>
 );
 
 // eslint-disable-next-line react/display-name
 export const WorkspaceBox = forwardRef(({ children }, ref) => (
   <Box
     ref={ref}
-    className="voxel-dog"
+    className="workspaceBox"
     m="auto"
     mt={["-40px"]}
-    mb={["-200px"]}
+    mb={["-230px"]}
     w={[280, 480, 640]}
     h={[280, 480, 640]}
     position="relative"
