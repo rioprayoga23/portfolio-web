@@ -1,45 +1,31 @@
 import { forwardRef } from "react";
-import { Box, Spinner } from "@chakra-ui/react";
 
 export const WorkspaceSpinner = () => (
-  <div className="mt-10 md:mt-0 h-48 md:h-[330px] lg:h-[420px]">
-    <Box
-      className="workspaceBox"
-      m="auto"
-      mt={["-40px"]}
-      mb={["-230px"]}
-      w={[280, 480, 500, 640]}
-      h={[280, 480, 500, 640]}
-      position="relative"
-    >
-      <Spinner
-        size="xl"
-        position="absolute"
-        left="50%"
-        top="40%"
-        ml="calc(0px - var(--spinner-size) / 2)"
-        mt="calc(0px - var(--spinner-size))"
-        color="white"
-      />
-    </Box>
+  <div className="absolute w-full top-[50px] md:top-10 lg:top-[135px]">
+    <div className="flex h-48 md:h-[330px] lg:h-[200px] W-full justify-center">
+      <div className="md:w-[400px] lg:w-[500px] xl:w-[560px] flex flex-col items-center justify-center">
+        <div className="lds-hourglass"></div>
+        <p>Nungguin yah?😜</p>
+      </div>
+    </div>
   </div>
 );
 
 // eslint-disable-next-line react/display-name
-export const WorkspaceBox = forwardRef(({ children }, ref) => (
-  <div className="mt-10 md:mt-0 h-48 md:h-[330px] lg:h-[420px]">
-    <Box
-      ref={ref}
-      className="workspaceBox"
-      m="auto"
-      mt={["-40px"]}
-      mb={["-230px"]}
-      w={[280, 480, 500, 640]}
-      h={[280, 480, 500, 640]}
-      position="relative"
-    >
-      {children}
-    </Box>
+export const WorkspaceBox = forwardRef(({ children, loading }, ref) => (
+  <div
+    className={`absolute w-full top-0 ${
+      !loading && "top-14 md:top-20 lg:top-11"
+    }`}
+  >
+    <div className="flex h-80 md:h-[390px] lg:h-[500px] xl:h-[580px] W-full justify-center">
+      <div
+        ref={ref}
+        className="w-[300px] md:w-[400px] lg:w-[500px] xl:w-[560px] flex justify-center"
+      >
+        {children}
+      </div>
+    </div>
   </div>
 ));
 

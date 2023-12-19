@@ -12,7 +12,7 @@ const Workspace = () => {
   const refContainer = useRef();
   const [loading, setLoading] = useState(true);
   const refRenderer = useRef();
-  const urlDogGLB = "/model/hacker_room.glb";
+  const urlDogGLB = "/model/hacker_room_1k.glb";
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer;
@@ -52,7 +52,7 @@ const Workspace = () => {
 
       // 640 -> 240
       // 8   -> 6
-      const scale = 150;
+      const scale = 138;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -64,7 +64,7 @@ const Workspace = () => {
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, Math.PI);
+      const ambientLight = new THREE.AmbientLight(0xffffff, Math.PI);
       scene.add(ambientLight);
 
       const controls = new OrbitControls(camera, renderer.domElement);
@@ -88,7 +88,7 @@ const Workspace = () => {
 
         if (frame <= 100) {
           const p = initialCameraPosition;
-          const rotSpeed = -easeOutCirc(frame / 210) * Math.PI * 20;
+          const rotSpeed = -easeOutCirc(frame / 115) * 92;
 
           camera.position.y = 50;
           camera.position.x =
@@ -119,7 +119,7 @@ const Workspace = () => {
   }, [handleWindowResize]);
 
   return (
-    <WorkspaceBox ref={refContainer}>
+    <WorkspaceBox ref={refContainer} loading={loading}>
       {loading && <WorkspaceSpinner />}
     </WorkspaceBox>
   );

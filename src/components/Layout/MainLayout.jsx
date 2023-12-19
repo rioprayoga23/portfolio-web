@@ -27,7 +27,7 @@ const Workspace3d = dynamic(
 
 const MainLayout = () => {
   return (
-    <main className={`light ${nunito.className}`}>
+    <main className={`${nunito.className}`}>
       {/* Navbar */}
       <Navbar />
       <Workspace3d />
