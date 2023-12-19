@@ -53,7 +53,7 @@ const Navbar = () => {
           </Link>
           <button
             className="mt-1"
-            onClick={() => setTheme(theme === "cupcake" ? "dark" : "cupcake")}
+            onClick={() => setTheme(theme === "garden" ? "dark" : "garden")}
           >
             <Image
               src={theme === "cupcake" ? MoonIcon : SunIcon}
