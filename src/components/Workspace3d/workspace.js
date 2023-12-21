@@ -52,7 +52,7 @@ const Workspace = () => {
 
       // 640 -> 240
       // 8   -> 6
-      const scale = 138;
+      const scale = 130;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,

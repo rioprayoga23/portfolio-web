@@ -43,7 +43,7 @@ const Navbar = () => {
 
           <Link href="#" className="flex items-center font-semibold mt-1">
             <Image
-              src={theme === "cupcake" ? GithubIcon : GithubWhiteIcon}
+              src={theme === "garden" ? GithubIcon : GithubWhiteIcon}
               alt="github icon"
               width={25}
               height={25}
@@ -56,7 +56,7 @@ const Navbar = () => {
             onClick={() => setTheme(theme === "garden" ? "dark" : "garden")}
           >
             <Image
-              src={theme === "cupcake" ? MoonIcon : SunIcon}
+              src={theme === "garden" ? MoonIcon : SunIcon}
               alt="theme icon"
               width={25}
               height={25}

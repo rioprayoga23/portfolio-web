@@ -1,6 +1,10 @@
 import { Fragment } from "react";
+
+//* component
+import Bio from "./partials/Bio";
 import Heading from "./partials/Heading";
 import Headline from "./partials/Headline";
+import SkillsExperiences from "./partials/SkillsExperiences";
 
 const About = () => {
   return (
@@ -11,18 +15,10 @@ const About = () => {
         <Heading />
 
         {/* Bio */}
-        <div className="mt-10 lg:mt-0">
-          <h2 className="text-xl font-bold underline mb-1">About Me</h2>
-          <p className="text-gray-400 indent-5">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum unde
-            consequatur aliquam dolor repellendus dignissimos a tempora,
-            ducimus, aperiam in quam sequi neque inventore alias consectetur quo
-            ex, perspiciatis hic. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Commodi quam iure tenetur impedit consequatur enim
-            quaerat molestias quisquam, labore laudantium dolore suscipit unde
-            facilis id magni dignissimos totam voluptate magnam?
-          </p>
-        </div>
+        <Bio />
+
+        {/* Skills & Experiences */}
+        <SkillsExperiences />
       </section>
     </Fragment>
   );

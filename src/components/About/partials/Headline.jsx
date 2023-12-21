@@ -1,4 +1,3 @@
-import React from "react";
 import { VT323 } from "next/font/google";
 
 const vtFont = VT323({
