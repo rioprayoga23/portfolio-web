@@ -12,7 +12,7 @@ const Workspace = () => {
   const refContainer = useRef();
   const [loading, setLoading] = useState(true);
   const refRenderer = useRef();
-  const urlDogGLB = "/model/hacker_room_1k.glb";
+  const urlGLB = "/model/new-hack-room.glb";
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer;
@@ -52,7 +52,7 @@ const Workspace = () => {
 
       // 640 -> 240
       // 8   -> 6
-      const scale = 130;
+      const scale = 138;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -71,7 +71,7 @@ const Workspace = () => {
       controls.autoRotate = true;
       controls.target = target;
 
-      loadGLTFModel(scene, urlDogGLB, {
+      loadGLTFModel(scene, urlGLB, {
         receiveShadow: false,
         castShadow: false,
       }).then(() => {

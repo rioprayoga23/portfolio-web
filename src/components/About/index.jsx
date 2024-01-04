@@ -1,10 +1,11 @@
 import { Fragment } from "react";
 
 //* component
-import Bio from "./partials/Bio";
-import Heading from "./partials/Heading";
-import Headline from "./partials/Headline";
-import SkillsExperiences from "./partials/SkillsExperiences";
+import Bio from "./components/Bio";
+import Experiences from "./components/Experiences";
+import Heading from "./components/Heading";
+import Headline from "./components/Headline";
+import Skills from "./components/Skills";
 
 const About = () => {
   return (
@@ -17,8 +18,11 @@ const About = () => {
         {/* Bio */}
         <Bio />
 
-        {/* Skills & Experiences */}
-        <SkillsExperiences />
+        {/* Experiences */}
+        <Experiences />
+
+        {/* skill */}
+        <Skills />
       </section>
     </Fragment>
   );
