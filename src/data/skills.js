@@ -29,7 +29,7 @@ export const skills_data = [
   { icon: NextIcon, name: "NextJs", alt: "next-js icon" },
   { icon: ReactIcon, name: "React Native", alt: "react-native icon" },
   { icon: FlutterIcon, name: "Flutter", alt: "flutter icon" },
-  { icon: TaildwindIcon, name: "TaildwindCSS", alt: "taildwind-css icon" },
+  { icon: TaildwindIcon, name: "Taildwind", alt: "taildwind-css icon" },
   { icon: BootstrapIcon, name: "Bootstrap", alt: "bootstrap icon" },
   { icon: FigmaIcon, name: "Figma", alt: "figma icon" },
   { icon: GitIcon, name: "Git", alt: "git icon" },

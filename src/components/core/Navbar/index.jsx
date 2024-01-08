@@ -12,7 +12,7 @@ import {
 } from "@/configs/images";
 import { useRouter } from "next/router";
 import MenuIcon from "./partials/MenuIcon";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 //* font
 const caveat = Caveat({
@@ -23,6 +23,11 @@ const caveat = Caveat({
 const Navbar = () => {
   const { asPath } = useRouter();
   const { theme, setTheme } = useTheme();
+
+  const closeDropdown = (e) => {
+    e.preventDefault();
+    e.target.blur();
+  };
 
   return (
     <nav className="navbar flex w-full sticky top-0 z-30 p-3 items-center drop-shadow-xl backdrop-blur-md justify-center">
@@ -45,7 +50,7 @@ const Navbar = () => {
         {/* web mode */}
         <div className="hidden md:flex items-center gap-5">
           <Link
-            href="#"
+            href="/"
             className={`font-semibold mt-1 ${
               theme === "garden"
                 ? "border-purple-700 hover:text-purple-700"
@@ -56,7 +61,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="#"
+            href="/portfolio"
             className={`font-semibold mt-1 ${
               theme === "garden"
                 ? "border-purple-700 hover:text-purple-700"
@@ -111,21 +116,23 @@ const Navbar = () => {
               className="dropdown-content z-[1] menu px-5 shadow bg-base-100 rounded-box w-52 mt-2"
             >
               <Link
-                href="#"
+                href="/"
                 className={`font-semibold my-1 ${
                   asPath == "/" &&
                   (theme === "garden" ? "text-purple-700" : " text-[#fcb404]")
                 }`}
+                onClick={closeDropdown}
               >
                 About
               </Link>
 
               <Link
-                href="#"
+                href="/portfolio"
                 className={`font-semibold my-1 ${
                   asPath == "/portfolio" &&
                   (theme === "garden" ? "text-purple-700" : " text-[#fcb404]")
                 }`}
+                onClick={closeDropdown}
               >
                 Portfolio
               </Link>
