@@ -12,7 +12,7 @@ const Skills = () => {
         HERE IS MY TECH STACK FOR SUCCESS.
       </h5>
 
-      <div className="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-5 mt-5">
+      <div className="flex flex-wrap justify-center gap-5 sm:flex-none sm:grid sm:grid-cols-4 md:grid-cols-4 sm:gap-5 mt-5">
         {skills_data.map((item, index) => (
           <Skill src={item.icon} alt={item.alt} name={item.name} key={index} />
         ))}

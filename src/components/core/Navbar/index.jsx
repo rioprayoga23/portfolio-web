@@ -24,8 +24,6 @@ const Navbar = () => {
   const { asPath } = useRouter();
   const { theme, setTheme } = useTheme();
 
-  console.log({ asPath });
-
   return (
     <nav className="navbar flex w-full sticky top-0 z-30 p-3 items-center drop-shadow-xl backdrop-blur-md justify-center">
       <div className="container md:w-[80%] lg:w-[70%] xl:w-[60%]">
