@@ -1,6 +1,9 @@
-import "@/styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import { useEffect } from "react";
+
+//* css
+import "@/styles/globals.css";
+import "@/styles/animation.css";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -8,7 +11,7 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <ThemeProvider>
+    <ThemeProvider defaultTheme="dark">
       <Component {...pageProps} />
     </ThemeProvider>
   );

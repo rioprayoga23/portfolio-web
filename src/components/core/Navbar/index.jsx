@@ -10,6 +10,9 @@ import {
   MoonIcon,
   SunIcon,
 } from "@/configs/images";
+import { useRouter } from "next/router";
+import MenuIcon from "./partials/MenuIcon";
+import { useEffect } from "react";
 
 //* font
 const caveat = Caveat({
@@ -18,7 +21,10 @@ const caveat = Caveat({
 });
 
 const Navbar = () => {
+  const { asPath } = useRouter();
   const { theme, setTheme } = useTheme();
+
+  console.log({ asPath });
 
   return (
     <nav className="navbar flex w-full sticky top-0 z-30 p-3 items-center drop-shadow-xl backdrop-blur-md justify-center">
@@ -26,18 +32,39 @@ const Navbar = () => {
         <div className="flex flex-1 items-center gap-5">
           <Link
             href="/"
-            className={`text-3xl font-bold me-5 ${caveat.className}`}
+            className={`text-3xl font-bold me-5 border-[#fcb404] hover:text-[#fcb404] ${
+              caveat.className
+            } ${
+              theme == "garden"
+                ? "border-[#fcb404] hover:text-[#fcb404]"
+                : "border-purple-700 hover:text-purple-700"
+            }`}
           >
             Rio Prayoga
           </Link>
         </div>
 
+        {/* web mode */}
         <div className="hidden md:flex items-center gap-5">
-          <Link href="#" className="font-semibold mt-1">
+          <Link
+            href="#"
+            className={`font-semibold mt-1 ${
+              theme === "garden"
+                ? "border-purple-700 hover:text-purple-700"
+                : "border-[#fcb404] hover:text-[#fcb404]"
+            } ${asPath == "/" && "border-b-2"}`}
+          >
             About
           </Link>
 
-          <Link href="#" className="font-semibold mt-1">
+          <Link
+            href="#"
+            className={`font-semibold mt-1 ${
+              theme === "garden"
+                ? "border-purple-700 hover:text-purple-700"
+                : "border-[#fcb404] hover:text-[#fcb404]"
+            } ${asPath == "/portfolio" && "border-b-2"}`}
+          >
             Portfolio
           </Link>
 
@@ -52,7 +79,6 @@ const Navbar = () => {
             <span>Source</span>
           </Link>
           <button
-            className="mt-1"
             onClick={() => setTheme(theme === "garden" ? "dark" : "garden")}
           >
             <Image
@@ -62,6 +88,51 @@ const Navbar = () => {
               height={25}
             />
           </button>
+        </div>
+
+        {/* mobile mode */}
+        <div className="flex md:hidden items-center gap-2">
+          <button
+            onClick={() => setTheme(theme === "garden" ? "dark" : "garden")}
+          >
+            <Image
+              src={theme === "garden" ? MoonIcon : SunIcon}
+              alt="theme icon"
+              width={25}
+              height={25}
+            />
+          </button>
+
+          <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button">
+              <MenuIcon />
+            </div>
+
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[1] menu px-5 shadow bg-base-100 rounded-box w-52 mt-2"
+            >
+              <Link
+                href="#"
+                className={`font-semibold my-1 ${
+                  asPath == "/" &&
+                  (theme === "garden" ? "text-purple-700" : " text-[#fcb404]")
+                }`}
+              >
+                About
+              </Link>
+
+              <Link
+                href="#"
+                className={`font-semibold my-1 ${
+                  asPath == "/portfolio" &&
+                  (theme === "garden" ? "text-purple-700" : " text-[#fcb404]")
+                }`}
+              >
+                Portfolio
+              </Link>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
