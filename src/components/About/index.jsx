@@ -11,19 +11,10 @@ const About = () => {
   return (
     <Fragment>
       <Headline />
-      <section className="mt-7">
-        {/* Heading */}
-        <Heading />
-
-        {/* Bio */}
-        <Bio />
-
-        {/* Experiences */}
-        <Experiences />
-
-        {/* skill */}
-        <Skills />
-      </section>
+      <Heading />
+      <Bio />
+      <Experiences />
+      <Skills />
     </Fragment>
   );
 };

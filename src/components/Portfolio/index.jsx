@@ -1,7 +1,12 @@
 import React, { Fragment } from "react";
+import Portfolios from "./components/Portfolios";
 
 const Portfolio = () => {
-  return <div>asd</div>;
+  return (
+    <Fragment>
+      <Portfolios />
+    </Fragment>
+  );
 };
 
 export default Portfolio;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { DefaultImage } from "@/configs/images";
 
-const CImage = ({ src, alt, w, h, className }) => {
+const CImage = ({ src, alt, w, h, className, layout }) => {
   const [isError, setIsError] = useState(false);
 
   return (
@@ -12,7 +12,7 @@ const CImage = ({ src, alt, w, h, className }) => {
       width={w}
       height={h}
       className={className}
-      layout=""
+      layout={layout}
       placeholder="blur"
       blurDataURL={"data:/default-image.jpg"}
       onError={() => setIsError(true)}
