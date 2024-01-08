@@ -1,20 +1,13 @@
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 //* hooks
 import { useTheme } from "next-themes";
-import { useMediaQuery } from "react-responsive";
 
 //* components
-const MenuMobile = dynamic(() => import("./partials/MenuMobile"), {
-  ssr: false,
-});
-
-const MenuWeb = dynamic(() => import("./partials/MenuWeb"), {
-  ssr: false,
-});
+import MenuMobile from "./partials/MenuMobile";
+import MenuWeb from "./partials/MenuWeb";
 
 //* font
 import { Caveat } from "next/font/google";
@@ -27,7 +20,6 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const { theme, setTheme } = useTheme();
   const { asPath } = useRouter();
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   useEffect(() => setActive(asPath), [asPath]);
 
@@ -49,16 +41,16 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {isMobile ? (
-          <MenuMobile theme={theme} asPath={asPath} setTheme={setTheme} />
-        ) : (
-          <MenuWeb
-            theme={theme}
-            asPath={asPath}
-            setTheme={setTheme}
-            active={active}
-          />
-        )}
+        {/* Mobile mode */}
+        <MenuMobile theme={theme} asPath={asPath} setTheme={setTheme} />
+
+        {/* Web mode */}
+        <MenuWeb
+          theme={theme}
+          asPath={asPath}
+          setTheme={setTheme}
+          active={active}
+        />
       </div>
     </nav>
   );
