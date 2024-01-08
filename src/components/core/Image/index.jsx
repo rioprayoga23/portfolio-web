@@ -13,8 +13,8 @@ const CImage = ({ src, alt, w, h, className }) => {
       height={h}
       className={className}
       layout=""
-      onBlur={"blur"}
-      blurDataURL={src}
+      placeholder="blur"
+      blurDataURL={"data:/default-image.jpg"}
       onError={() => setIsError(true)}
     />
   );

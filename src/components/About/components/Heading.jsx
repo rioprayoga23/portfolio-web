@@ -1,5 +1,10 @@
 import Image from "next/image";
+
+//* images
 import { IdIcon, Me } from "@/configs/images";
+
+//* components
+import CImage from "@/components/core/Image";
 
 const Heading = () => {
   return (
@@ -17,13 +22,7 @@ const Heading = () => {
       </div>
 
       <div className="rounded-full overflow-hidden w-[110px] border-4 border-white">
-        <Image
-          src={Me}
-          layout="responsive"
-          alt="profile img"
-          onBlur={Me}
-          blurDataURL={Me}
-        />
+        <CImage src={Me} layout="responsive" alt="Rio Prayoga Teja Putra" />
       </div>
     </section>
   );

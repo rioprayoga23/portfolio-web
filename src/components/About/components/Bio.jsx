@@ -2,7 +2,6 @@ import CTitle from "@/components/core/Title";
 
 const Bio = () => {
   return (
-    // <SectionLayout>
     <section className="mt-10 lg:mt-0">
       <CTitle name={"About Me"} />
       <p className="indent-5">
@@ -15,7 +14,6 @@ const Bio = () => {
         magni dignissimos totam voluptate magnam?
       </p>
     </section>
-    // </SectionLayout>
   );
 };
 

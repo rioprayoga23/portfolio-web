@@ -1,33 +1,35 @@
-import { useTheme } from "next-themes";
-import { Caveat } from "next/font/google";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-
-//* images
-import {
-  GithubIcon,
-  GithubWhiteIcon,
-  MoonIcon,
-  SunIcon,
-} from "@/configs/images";
 import { useRouter } from "next/router";
-import MenuIcon from "./partials/MenuIcon";
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
+
+//* hooks
+import { useTheme } from "next-themes";
+import { useMediaQuery } from "react-responsive";
+
+//* components
+const MenuMobile = dynamic(() => import("./partials/MenuMobile"), {
+  ssr: false,
+});
+
+const MenuWeb = dynamic(() => import("./partials/MenuWeb"), {
+  ssr: false,
+});
 
 //* font
+import { Caveat } from "next/font/google";
 const caveat = Caveat({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
 
 const Navbar = () => {
-  const { asPath } = useRouter();
+  const [active, setActive] = useState("");
   const { theme, setTheme } = useTheme();
+  const { asPath } = useRouter();
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
-  const closeDropdown = (e) => {
-    e.preventDefault();
-    e.target.blur();
-  };
+  useEffect(() => setActive(asPath), [asPath]);
 
   return (
     <nav className="navbar flex w-full sticky top-0 z-30 p-3 items-center drop-shadow-xl backdrop-blur-md justify-center">
@@ -47,98 +49,16 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* web mode */}
-        <div className="hidden md:flex items-center gap-5">
-          <Link
-            href="/"
-            className={`font-semibold mt-1 ${
-              theme === "garden"
-                ? "border-purple-700 hover:text-purple-700"
-                : "border-[#fcb404] hover:text-[#fcb404]"
-            } ${asPath == "/" && "border-b-2"}`}
-          >
-            About
-          </Link>
-
-          <Link
-            href="/portfolio"
-            className={`font-semibold mt-1 ${
-              theme === "garden"
-                ? "border-purple-700 hover:text-purple-700"
-                : "border-[#fcb404] hover:text-[#fcb404]"
-            } ${asPath == "/portfolio" && "border-b-2"}`}
-          >
-            Portfolio
-          </Link>
-
-          <Link href="#" className="flex items-center font-semibold mt-1">
-            <Image
-              src={theme === "garden" ? GithubIcon : GithubWhiteIcon}
-              alt="github icon"
-              width={25}
-              height={25}
-              className="flex-shrink-0"
-            />
-            <span>Source</span>
-          </Link>
-          <button
-            onClick={() => setTheme(theme === "garden" ? "dark" : "garden")}
-          >
-            <Image
-              src={theme === "garden" ? MoonIcon : SunIcon}
-              alt="theme icon"
-              width={25}
-              height={25}
-            />
-          </button>
-        </div>
-
-        {/* mobile mode */}
-        <div className="flex md:hidden items-center gap-2">
-          <button
-            onClick={() => setTheme(theme === "garden" ? "dark" : "garden")}
-          >
-            <Image
-              src={theme === "garden" ? MoonIcon : SunIcon}
-              alt="theme icon"
-              width={25}
-              height={25}
-            />
-          </button>
-
-          <div className="dropdown dropdown-end">
-            <div tabIndex={0} role="button">
-              <MenuIcon />
-            </div>
-
-            <ul
-              tabIndex={0}
-              className="dropdown-content z-[1] menu px-5 shadow bg-base-100 rounded-box w-52 mt-2"
-            >
-              <Link
-                href="/"
-                className={`font-semibold my-1 ${
-                  asPath == "/" &&
-                  (theme === "garden" ? "text-purple-700" : " text-[#fcb404]")
-                }`}
-                onClick={closeDropdown}
-              >
-                About
-              </Link>
-
-              <Link
-                href="/portfolio"
-                className={`font-semibold my-1 ${
-                  asPath == "/portfolio" &&
-                  (theme === "garden" ? "text-purple-700" : " text-[#fcb404]")
-                }`}
-                onClick={closeDropdown}
-              >
-                Portfolio
-              </Link>
-            </ul>
-          </div>
-        </div>
+        {isMobile ? (
+          <MenuMobile theme={theme} asPath={asPath} setTheme={setTheme} />
+        ) : (
+          <MenuWeb
+            theme={theme}
+            asPath={asPath}
+            setTheme={setTheme}
+            active={active}
+          />
+        )}
       </div>
     </nav>
   );

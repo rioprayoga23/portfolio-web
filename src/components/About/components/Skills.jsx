@@ -1,7 +1,10 @@
+//* data
 import { skills_data } from "@/data/skills";
+
+//* components
 import Skill from "../partials/Skill";
-import CTitle from "@/components/core/Title";
 import SectionLayout from "@/components/core/Layout/SectionLayout";
+import CTitle from "@/components/core/Title";
 
 const Skills = () => {
   return (
