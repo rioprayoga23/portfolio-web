@@ -1,21 +1,22 @@
-import React, { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 import { DefaultImage } from "@/configs/images";
 
 const CImage = ({ src, alt, w, h, className, layout }) => {
   const [isError, setIsError] = useState(false);
+  const link = !isError ? src : DefaultImage;
 
   return (
     <Image
-      src={!isError ? src : DefaultImage}
+      src={link}
       alt={alt}
       width={w}
       height={h}
-      className={className}
+      className={`${className}`}
       layout={layout}
-      placeholder="blur"
-      blurDataURL={"data:/default-image.jpg"}
       onError={() => setIsError(true)}
+      {...(typeof link === "string" && { placeholder: "blur" })}
+      {...(typeof link === "string" && { blurDataURL: link })}
     />
   );
 };

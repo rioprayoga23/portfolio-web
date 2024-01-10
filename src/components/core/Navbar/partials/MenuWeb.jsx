@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
 
 //* data
 import { navbar_data } from "@/data/navbar";
@@ -11,15 +12,20 @@ import {
   MoonIcon,
   SunIcon,
 } from "@/configs/images";
+import { setTheme } from "@/redux/themes/action";
 
-const MenuWeb = ({ theme, setTheme, asPath, active }) => {
+const MenuWeb = ({ asPath, active }) => {
+  const { isActiveTheme } = useSelector((state) => state.themes);
+
+  const dispatch = useDispatch();
+
   return (
     <div className="hidden md:flex items-center gap-5">
-      {navbar_data.map((item, index) => (
+      {navbar_data.slice(0, navbar_data.length - 1).map((item, index) => (
         <Link
           href={item.link}
           className={`font-semibold mt-1 ${
-            theme === "garden"
+            isActiveTheme === "garden"
               ? "border-purple-700 hover:text-purple-700"
               : "border-[#fcb404] hover:text-[#fcb404]"
           } ${asPath === item.link && active === item.link && "border-b-2"}`}
@@ -29,19 +35,35 @@ const MenuWeb = ({ theme, setTheme, asPath, active }) => {
         </Link>
       ))}
 
-      <Link href="#" className="flex items-center font-semibold mt-1">
+      <Link
+        href="https://github.com/rioprayoga23"
+        target="_blank"
+        className="flex items-center font-semibold mt-1"
+      >
         <Image
-          src={theme === "garden" ? GithubIcon : GithubWhiteIcon}
+          src={isActiveTheme === "garden" ? GithubIcon : GithubWhiteIcon}
           alt="github icon"
           width={25}
           height={25}
           className="flex-shrink-0"
         />
-        <span>Source</span>
+        <span
+          className={`${
+            isActiveTheme === "garden"
+              ? "border-purple-700 hover:text-purple-700"
+              : "border-[#fcb404] hover:text-[#fcb404]"
+          }`}
+        >
+          Source
+        </span>
       </Link>
-      <button onClick={() => setTheme(theme === "garden" ? "dark" : "garden")}>
+      <button
+        onClick={() =>
+          dispatch(setTheme(isActiveTheme === "dark" ? "garden" : "dark"))
+        }
+      >
         <Image
-          src={theme === "garden" ? MoonIcon : SunIcon}
+          src={isActiveTheme === "garden" ? MoonIcon : SunIcon}
           alt="theme icon"
           width={25}
           height={25}

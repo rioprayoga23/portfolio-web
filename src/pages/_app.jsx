@@ -4,10 +4,16 @@ import { ThemeProvider } from "next-themes";
 import "@/styles/animation.css";
 import "@/styles/globals.css";
 
+//* redux
+import { store } from "@/redux/store";
+import { Provider } from "react-redux";
+
 export default function App({ Component, pageProps }) {
   return (
-    <ThemeProvider>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </Provider>
   );
 }

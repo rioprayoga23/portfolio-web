@@ -11,13 +11,18 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@plaiceholder/next": "^3.0.0",
+    "@reduxjs/toolkit": "^2.0.1",
+    "cookies-next": "^4.1.0",
     "framer-motion": "^10.16.14",
     "next": "14.0.3",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-redux": "^9.0.0",
     "react-responsive": "^9.0.2",
-    "sharp": "^0.33.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-persist": "^6.0.0",
     "three": "^0.159.0"
   },
   "devDependencies": {

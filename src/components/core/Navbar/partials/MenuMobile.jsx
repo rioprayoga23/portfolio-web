@@ -10,17 +10,31 @@ import MenuIcon from "./MenuIcon";
 // * images
 import { MoonIcon, SunIcon } from "@/configs/images";
 
-const MenuMobile = ({ theme, setTheme, asPath }) => {
-  const closeDropdown = (e) => {
+//* redux
+import { setTheme } from "@/redux/themes/action";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
+
+const MenuMobile = ({ asPath }) => {
+  const { isActiveTheme } = useSelector((state) => state.themes);
+  const dispatch = useDispatch();
+  const { push } = useRouter();
+
+  const handleClick = (link, e) => {
+    push(link);
     e.preventDefault();
     e.target.blur();
   };
 
   return (
     <div className="flex md:hidden items-center gap-2">
-      <button onClick={() => setTheme(theme === "garden" ? "dark" : "garden")}>
+      <button
+        onClick={() =>
+          dispatch(setTheme(isActiveTheme === "dark" ? "garden" : "dark"))
+        }
+      >
         <Image
-          src={theme === "garden" ? MoonIcon : SunIcon}
+          src={isActiveTheme === "garden" ? MoonIcon : SunIcon}
           alt="theme icon"
           width={25}
           height={25}
@@ -37,17 +51,20 @@ const MenuMobile = ({ theme, setTheme, asPath }) => {
           className="dropdown-content z-[1] menu px-5 shadow bg-base-100 rounded-box w-52 mt-2"
         >
           {navbar_data.map((item, index) => (
-            <Link
+            <div
+              tabIndex={0}
               href={item.link}
               className={`font-semibold my-1 ${
                 asPath === item.link &&
-                (theme === "garden" ? "text-purple-700" : " text-[#fcb404]")
+                (isActiveTheme === "garden"
+                  ? "text-purple-700"
+                  : " text-[#fcb404]")
               }`}
-              onClick={closeDropdown}
               key={index}
+              onClick={(e) => handleClick(item?.link, e)}
             >
               {item.name}
-            </Link>
+            </div>
           ))}
         </ul>
       </div>

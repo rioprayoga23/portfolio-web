@@ -1,20 +1,20 @@
+import { useSelector } from "react-redux";
 import CImage from "@/components/core/Image";
-import { useTheme } from "@emotion/react";
 
 const ProjectCard = () => {
-  const { theme } = useTheme();
+  const { isActiveTheme } = useSelector((state) => state.themes);
 
   return (
     <div
       className={`w-full rounded-xl overflow-hidden cursor-pointer mb-5 ${
-        theme == "garden"
-          ? "hover:bg-zinc-300 transition-colors duration-300 ease-in-out"
-          : "hover:bg-slate-800 transition-colors duration-300 ease-in-out"
+        isActiveTheme == "garden" ? "hover:bg-zinc-300" : "hover:bg-slate-800"
       }  p-3`}
     >
       <div className="w-full h-[190px] sm:h-[150px] md:h-[170px] relative">
         <CImage
-          src={""}
+          src={
+            "https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          }
           alt=""
           className="rounded-xl object-cover"
           layout="fill"

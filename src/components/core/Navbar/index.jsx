@@ -2,23 +2,22 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-//* hooks
-import { useTheme } from "next-themes";
-
 //* components
 import MenuMobile from "./partials/MenuMobile";
 import MenuWeb from "./partials/MenuWeb";
 
 //* font
 import { Caveat } from "next/font/google";
+import { useSelector } from "react-redux";
 const caveat = Caveat({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
 
 const Navbar = () => {
+  const { isActiveTheme } = useSelector((state) => state.themes);
+
   const [active, setActive] = useState("");
-  const { theme, setTheme } = useTheme();
   const { asPath } = useRouter();
 
   useEffect(() => setActive(asPath), [asPath]);
@@ -32,7 +31,7 @@ const Navbar = () => {
             className={`text-3xl font-bold me-5 border-[#fcb404] hover:text-[#fcb404] ${
               caveat.className
             } ${
-              theme == "garden"
+              isActiveTheme == "garden"
                 ? "border-[#fcb404] hover:text-[#fcb404]"
                 : "border-purple-700 hover:text-purple-700"
             }`}
@@ -42,15 +41,10 @@ const Navbar = () => {
         </div>
 
         {/* Mobile mode */}
-        <MenuMobile theme={theme} asPath={asPath} setTheme={setTheme} />
+        <MenuMobile asPath={asPath} />
 
         {/* Web mode */}
-        <MenuWeb
-          theme={theme}
-          asPath={asPath}
-          setTheme={setTheme}
-          active={active}
-        />
+        <MenuWeb asPath={asPath} active={active} />
       </div>
     </nav>
   );
