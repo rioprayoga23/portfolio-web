@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef, useCallback } from "react";
-import * as THREE from "three";
 import { loadGLTFModel } from "@/lib/model";
-import { WorkspaceSpinner, WorkspaceBox } from "./loader";
+import { useCallback, useEffect, useRef, useState } from "react";
+import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
+import { WorkspaceBox, WorkspaceSpinner } from "./loader";
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
@@ -12,7 +12,7 @@ const Workspace = () => {
   const refContainer = useRef();
   const [loading, setLoading] = useState(true);
   const refRenderer = useRef();
-  const urlGLB = "/model/new-hack-room.glb";
+  const urlGLB = "/model/programmer.glb";
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer;
@@ -43,16 +43,16 @@ const Workspace = () => {
       refRenderer.current = renderer;
       const scene = new THREE.Scene();
 
-      const target = new THREE.Vector3(-0.5, 1.2, 0);
+      const target = new THREE.Vector3(0, -0.2, 0);
       const initialCameraPosition = new THREE.Vector3(
-        100, // Adjusted the factor from 20 to 5
-        5, // Keep the same height
-        100
+        0, // Adjusted the factor from 20 to 5
+        0, // Keep the same height
+        50
       );
 
       // 640 -> 240
       // 8   -> 6
-      const scale = 138;
+      const scale = 3;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -88,9 +88,9 @@ const Workspace = () => {
 
         if (frame <= 100) {
           const p = initialCameraPosition;
-          const rotSpeed = -easeOutCirc(frame / 115) * 92;
+          const rotSpeed = -easeOutCirc(frame / 115) * 12;
 
-          camera.position.y = 50;
+          camera.position.y = 10;
           camera.position.x =
             p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed);
           camera.position.z =
