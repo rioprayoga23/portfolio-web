@@ -1,10 +1,10 @@
-import CImage from "@/components/core/Image";
+import Image from "next/image";
 
 const Skill = ({ src, alt, name }) => {
   return (
     <section className="flex flex-col justify-center items-center gap-1">
       <div className="flex justify-center items-center bg-slate-800 rounded-full w-[73px] h-[73px]">
-        <CImage
+        <Image
           src={src}
           alt={alt}
           className={
