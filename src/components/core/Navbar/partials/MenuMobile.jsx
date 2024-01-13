@@ -8,7 +8,7 @@ import { navbar_data } from "@/data/navbar";
 import MenuIcon from "./MenuIcon";
 
 // * images
-import { MoonIcon, SunIcon } from "@/configs/images";
+import { OwlIcon, WolfIcon } from "@/configs/images";
 
 //* redux
 import { setTheme } from "@/redux/themes/action";
@@ -30,11 +30,11 @@ const MenuMobile = ({ asPath }) => {
     <div className="flex md:hidden items-center gap-2">
       <button
         onClick={() =>
-          dispatch(setTheme(isActiveTheme === "dark" ? "garden" : "dark"))
+          dispatch(setTheme(isActiveTheme === "dark" ? "black" : "dark"))
         }
       >
         <Image
-          src={isActiveTheme === "garden" ? MoonIcon : SunIcon}
+          src={isActiveTheme === "black" ? OwlIcon : WolfIcon}
           alt="theme icon"
           width={25}
           height={25}
@@ -56,7 +56,7 @@ const MenuMobile = ({ asPath }) => {
               href={item.link}
               className={`font-semibold my-1 ${
                 asPath === item.link &&
-                (isActiveTheme === "garden"
+                (isActiveTheme === "black"
                   ? "text-purple-700"
                   : " text-[#fcb404]")
               }`}

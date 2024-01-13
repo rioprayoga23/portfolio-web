@@ -5,6 +5,8 @@ import { Anonymous_Pro, Nunito } from "next/font/google";
 import dynamic from "next/dynamic";
 import { WorkspaceSpinner } from "../../Workspace3d/loader";
 import ContentLayout from "./ContentLayout";
+import { useGlobalAudioPlayer } from "react-use-audio-player";
+import { useEffect } from "react";
 
 const anonymous = Anonymous_Pro({
   subsets: ["latin"],

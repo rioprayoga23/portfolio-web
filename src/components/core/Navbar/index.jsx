@@ -31,7 +31,7 @@ const Navbar = () => {
             className={`text-3xl font-bold me-5 border-[#fcb404] hover:text-[#fcb404] ${
               caveat.className
             } ${
-              isActiveTheme == "garden"
+              isActiveTheme == "black"
                 ? "border-[#fcb404] hover:text-[#fcb404]"
                 : "border-purple-700 hover:text-purple-700"
             }`}

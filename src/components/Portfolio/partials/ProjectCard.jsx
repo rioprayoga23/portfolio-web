@@ -7,7 +7,7 @@ const ProjectCard = () => {
   return (
     <div
       className={`w-full rounded-xl overflow-hidden cursor-pointer mb-5 ${
-        isActiveTheme == "garden" ? "hover:bg-zinc-300" : "hover:bg-slate-800"
+        isActiveTheme == "black" ? "hover:bg-zinc-300" : "hover:bg-slate-800"
       }  p-3`}
     >
       <div className="w-full h-[190px] sm:h-[150px] md:h-[170px] relative">

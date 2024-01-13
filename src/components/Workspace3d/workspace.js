@@ -64,7 +64,11 @@ const Workspace = () => {
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
 
-      const ambientLight = new THREE.AmbientLight(0xffffff, Math.PI);
+      // const ambientLight = new THREE.AmbientLight(0xffffff, Math.PI);
+      // scene.add(ambientLight);
+
+      const ambientLight = new THREE.AmbientLight(0x111111);
+      ambientLight.intensity = 0.2;
       scene.add(ambientLight);
 
       const controls = new OrbitControls(camera, renderer.domElement);

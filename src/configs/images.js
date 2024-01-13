@@ -20,3 +20,5 @@ export { default as MysqlIcon } from "/public/mysql-icon.png";
 export { default as PostgreIcon } from "/public/postgre-icon.png";
 export { default as FigmaIcon } from "/public/figma-icon.png";
 export { default as GitIcon } from "/public/git-icon.png";
+export { default as WolfIcon } from "/public/wolf.png";
+export { default as OwlIcon } from "/public/owl.png";

@@ -6,18 +6,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { navbar_data } from "@/data/navbar";
 
 //* images
-import {
-  GithubIcon,
-  GithubWhiteIcon,
-  MoonIcon,
-  SunIcon,
-} from "@/configs/images";
+import { GithubWhiteIcon, OwlIcon, WolfIcon } from "@/configs/images";
 import { setTheme } from "@/redux/themes/action";
+import { useEffect, useState } from "react";
 
 const MenuWeb = ({ asPath, active }) => {
   const { isActiveTheme } = useSelector((state) => state.themes);
+  // const [audioFile, setAudioFile] = useState("/audio/owl.mp3");
 
   const dispatch = useDispatch();
+
+  // let audio = new Audio(audioFile);
+
+  // useEffect(() => {
+  //   setAudioFile(
+  //     audioFile === "/audio/owl.mp3" ? "/audio/wolf.mp3" : "/audio/owl.mp3"
+  //   );
+  // }, [isActiveTheme]);
 
   return (
     <div className="hidden md:flex items-center gap-5">
@@ -25,7 +30,7 @@ const MenuWeb = ({ asPath, active }) => {
         <Link
           href={item.link}
           className={`font-semibold mt-1 ${
-            isActiveTheme === "garden"
+            isActiveTheme === "black"
               ? "border-purple-700 hover:text-purple-700"
               : "border-[#fcb404] hover:text-[#fcb404]"
           } ${asPath === item.link && active === item.link && "border-b-2"}`}
@@ -41,7 +46,7 @@ const MenuWeb = ({ asPath, active }) => {
         className="flex items-center font-semibold mt-1"
       >
         <Image
-          src={isActiveTheme === "garden" ? GithubIcon : GithubWhiteIcon}
+          src={isActiveTheme === "black" ? GithubWhiteIcon : GithubWhiteIcon}
           alt="github icon"
           width={25}
           height={25}
@@ -49,7 +54,7 @@ const MenuWeb = ({ asPath, active }) => {
         />
         <span
           className={`${
-            isActiveTheme === "garden"
+            isActiveTheme === "black"
               ? "border-purple-700 hover:text-purple-700"
               : "border-[#fcb404] hover:text-[#fcb404]"
           }`}
@@ -58,12 +63,13 @@ const MenuWeb = ({ asPath, active }) => {
         </span>
       </Link>
       <button
-        onClick={() =>
-          dispatch(setTheme(isActiveTheme === "dark" ? "garden" : "dark"))
-        }
+        onClick={() => {
+          dispatch(setTheme(isActiveTheme === "dark" ? "black" : "dark"));
+          // audio.play();
+        }}
       >
         <Image
-          src={isActiveTheme === "garden" ? MoonIcon : SunIcon}
+          src={isActiveTheme === "black" ? OwlIcon : WolfIcon}
           alt="theme icon"
           width={25}
           height={25}
