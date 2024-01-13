@@ -28,12 +28,8 @@ const Navbar = () => {
         <div className="flex flex-1 items-center gap-5">
           <Link
             href="/"
-            className={`text-3xl font-bold me-5 border-[#fcb404] hover:text-[#fcb404] ${
-              caveat.className
-            } ${
-              isActiveTheme == "black"
-                ? "border-[#fcb404] hover:text-[#fcb404]"
-                : "border-purple-700 hover:text-purple-700"
+            className={`text-3xl font-bold me-5 ${caveat.className} ${
+              isActiveTheme == "black" ? "text-[#fcb404]" : " text-purple-700"
             }`}
           >
             Rio Prayoga

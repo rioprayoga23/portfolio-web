@@ -7,7 +7,7 @@ import { navbar_data } from "@/data/navbar";
 import MenuIcon from "./MenuIcon";
 
 // * images
-import { MoonIcon, WolfIcon } from "@/configs/images";
+import { MoonIcon, OwlIcon, WolfIcon } from "@/configs/images";
 
 //* redux
 import { setTheme } from "@/redux/themes/action";
@@ -33,7 +33,7 @@ const MenuMobile = ({ asPath }) => {
         }
       >
         <Image
-          src={isActiveTheme === "black" ? MoonIcon : WolfIcon}
+          src={isActiveTheme === "black" ? OwlIcon : WolfIcon}
           alt="theme icon"
           width={25}
           height={25}
@@ -47,7 +47,7 @@ const MenuMobile = ({ asPath }) => {
 
         <ul
           tabIndex={0}
-          className="dropdown-content z-[1] menu px-5 shadow bg-base-100 rounded-box w-52 mt-2"
+          className="dropdown-content z-[1] menu px-5 shadow bg-neutral w-52 mt-2 rounded-2xl"
         >
           {navbar_data.map((item, index) => (
             <div
@@ -56,8 +56,8 @@ const MenuMobile = ({ asPath }) => {
               className={`font-semibold my-1 ${
                 asPath === item.link &&
                 (isActiveTheme === "black"
-                  ? "text-purple-700"
-                  : " text-[#fcb404]")
+                  ? " text-[#fcb404]"
+                  : "text-purple-700")
               }`}
               key={index}
               onClick={(e) => handleClick(item?.link, e)}
