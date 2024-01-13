@@ -9,6 +9,7 @@ import MenuWeb from "./partials/MenuWeb";
 //* font
 import { Caveat } from "next/font/google";
 import { useSelector } from "react-redux";
+
 const caveat = Caveat({
   subsets: ["latin"],
   weight: ["400", "700"],

@@ -24,7 +24,13 @@ const Heading = () => {
         </div>
 
         <div className="rounded-full overflow-hidden w-[110px] border-4 border-white">
-          <CImage src={Me} layout="responsive" alt="Rio Prayoga Teja Putra" />
+          <Image
+            src={Me}
+            layout="responsive"
+            alt="Rio Prayoga Teja Putra"
+            placeholder="blur"
+            priority
+          />
         </div>
       </div>
     </SectionLayout>

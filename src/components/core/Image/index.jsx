@@ -1,10 +1,14 @@
 import Image from "next/image";
 import { useState } from "react";
-import { DefaultImage } from "@/configs/images";
 
 const CImage = ({ src, alt, w, h, className, layout, style }) => {
   const [isError, setIsError] = useState(false);
-  const link = !isError ? src : DefaultImage;
+  const link = !isError ? src : "/public/default-image.jpg";
+
+  const toBase64 = (src) =>
+    typeof window === "undefined"
+      ? Buffer.from(src).toString("base64")
+      : window.btoa(src);
 
   return (
     <Image
@@ -14,10 +18,11 @@ const CImage = ({ src, alt, w, h, className, layout, style }) => {
       height={h}
       className={`${className}`}
       layout={layout}
-      onError={() => setIsError(true)}
       style={style}
-      {...(typeof link === "string" && { placeholder: "blur" })}
-      {...(typeof link === "string" && { blurDataURL: link })}
+      placeholder="blur"
+      blurDataURL={`data:image/svg+xml;base64,${toBase64(src)}`}
+      onError={() => setIsError(true)}
+      priority
     />
   );
 };

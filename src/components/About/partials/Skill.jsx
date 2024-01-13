@@ -1,5 +1,4 @@
 import CImage from "@/components/core/Image";
-import React from "react";
 
 const Skill = ({ src, alt, name }) => {
   return (
