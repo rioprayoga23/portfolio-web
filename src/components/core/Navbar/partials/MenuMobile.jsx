@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 //* data
 import { navbar_data } from "@/data/navbar";
@@ -8,12 +7,12 @@ import { navbar_data } from "@/data/navbar";
 import MenuIcon from "./MenuIcon";
 
 // * images
-import { OwlIcon, WolfIcon } from "@/configs/images";
+import { MoonIcon, WolfIcon } from "@/configs/images";
 
 //* redux
 import { setTheme } from "@/redux/themes/action";
-import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
 
 const MenuMobile = ({ asPath }) => {
   const { isActiveTheme } = useSelector((state) => state.themes);
@@ -34,7 +33,7 @@ const MenuMobile = ({ asPath }) => {
         }
       >
         <Image
-          src={isActiveTheme === "black" ? OwlIcon : WolfIcon}
+          src={isActiveTheme === "black" ? MoonIcon : WolfIcon}
           alt="theme icon"
           width={25}
           height={25}

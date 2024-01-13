@@ -8,21 +8,11 @@ import { navbar_data } from "@/data/navbar";
 //* images
 import { GithubWhiteIcon, OwlIcon, WolfIcon } from "@/configs/images";
 import { setTheme } from "@/redux/themes/action";
-import { useEffect, useState } from "react";
 
 const MenuWeb = ({ asPath, active }) => {
   const { isActiveTheme } = useSelector((state) => state.themes);
-  // const [audioFile, setAudioFile] = useState("/audio/owl.mp3");
 
   const dispatch = useDispatch();
-
-  // let audio = new Audio(audioFile);
-
-  // useEffect(() => {
-  //   setAudioFile(
-  //     audioFile === "/audio/owl.mp3" ? "/audio/wolf.mp3" : "/audio/owl.mp3"
-  //   );
-  // }, [isActiveTheme]);
 
   return (
     <div className="hidden md:flex items-center gap-5">
@@ -31,8 +21,8 @@ const MenuWeb = ({ asPath, active }) => {
           href={item.link}
           className={`font-semibold mt-1 ${
             isActiveTheme === "black"
-              ? "border-purple-700 hover:text-purple-700"
-              : "border-[#fcb404] hover:text-[#fcb404]"
+              ? "border-[#fcb404] hover:text-[#fcb404]"
+              : "border-purple-700 hover:text-purple-700"
           } ${asPath === item.link && active === item.link && "border-b-2"}`}
           key={index}
         >
@@ -55,18 +45,18 @@ const MenuWeb = ({ asPath, active }) => {
         <span
           className={`${
             isActiveTheme === "black"
-              ? "border-purple-700 hover:text-purple-700"
-              : "border-[#fcb404] hover:text-[#fcb404]"
+              ? "border-[#fcb404] hover:text-[#fcb404]"
+              : "border-purple-700 hover:text-purple-700"
           }`}
         >
           Source
         </span>
       </Link>
       <button
-        onClick={() => {
-          dispatch(setTheme(isActiveTheme === "dark" ? "black" : "dark"));
-          // audio.play();
-        }}
+        className="flex items-center"
+        onClick={() =>
+          dispatch(setTheme(isActiveTheme === "dark" ? "black" : "dark"))
+        }
       >
         <Image
           src={isActiveTheme === "black" ? OwlIcon : WolfIcon}

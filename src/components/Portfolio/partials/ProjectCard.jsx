@@ -1,14 +1,19 @@
-import { useSelector } from "react-redux";
 import CImage from "@/components/core/Image";
+import { useSelector } from "react-redux";
 
-const ProjectCard = () => {
+const ProjectCard = ({ ref }) => {
   const { isActiveTheme } = useSelector((state) => state.themes);
+
+  const openModal = () => {
+    document.getElementById("my_modal_2").showModal();
+  };
 
   return (
     <div
       className={`w-full rounded-xl overflow-hidden cursor-pointer mb-5 ${
-        isActiveTheme == "black" ? "hover:bg-zinc-300" : "hover:bg-slate-800"
+        isActiveTheme == "black" ? "hover:bg-neutral" : "hover:bg-neutral"
       }  p-3`}
+      onClick={openModal}
     >
       <div className="w-full h-[190px] sm:h-[150px] md:h-[170px] relative">
         <CImage
