@@ -1,14 +1,19 @@
 import CImage from "@/components/core/Image";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
 const ProjectCard = () => {
   const { isActiveTheme } = useSelector((state) => state.themes);
+  const { push } = useRouter();
 
   return (
     <div
       className={`w-full rounded-xl overflow-hidden cursor-pointer mb-5 ${
         isActiveTheme == "black" ? "hover:bg-neutral" : "hover:bg-neutral"
       }  p-3`}
+      onClick={() =>
+        push({ pathname: "/portfolio", query: { q: "movie" }, slashes: "/" })
+      }
     >
       <div className="w-full h-[190px] sm:h-[150px] md:h-[170px] relative">
         <CImage

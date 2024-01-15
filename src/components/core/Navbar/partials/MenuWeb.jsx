@@ -14,6 +14,9 @@ const MenuWeb = ({ asPath, active }) => {
 
   const dispatch = useDispatch();
 
+  console.log({ asPath });
+  console.log({ active });
+
   return (
     <div className="hidden md:flex items-center gap-5">
       {navbar_data.slice(0, navbar_data.length - 1).map((item, index) => (
@@ -23,7 +26,11 @@ const MenuWeb = ({ asPath, active }) => {
             isActiveTheme === "black"
               ? "border-[#fcb404] hover:text-[#fcb404]"
               : "border-purple-700 hover:text-purple-700"
-          } ${asPath === item.link && active === item.link && "border-b-2"}`}
+          } ${
+            (active === item.link ||
+              (active.includes("?") && item.link !== "/")) &&
+            "border-b-2"
+          }`}
           key={index}
         >
           {item.name}

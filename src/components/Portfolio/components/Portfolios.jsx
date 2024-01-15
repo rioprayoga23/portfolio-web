@@ -12,8 +12,6 @@ const CModal = dynamic(() => import("@/components/core/Modal"), {
 });
 
 const Portfolios = () => {
-  const [tempData, setTempData] = useState({});
-
   return (
     <Fragment>
       <CTitle name="Project I've Built" />
