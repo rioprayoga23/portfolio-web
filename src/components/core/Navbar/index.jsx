@@ -38,10 +38,10 @@ const Navbar = () => {
         </div>
 
         {/* Mobile mode */}
-        <MenuMobile asPath={asPath} />
+        <MenuMobile active={active} />
 
         {/* Web mode */}
-        <MenuWeb asPath={asPath} active={active} />
+        <MenuWeb active={active} />
       </div>
     </nav>
   );

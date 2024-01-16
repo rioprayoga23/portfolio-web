@@ -7,21 +7,20 @@ import { navbar_data } from "@/data/navbar";
 import MenuIcon from "./MenuIcon";
 
 // * images
-import { MoonIcon, OwlIcon, WolfIcon } from "@/configs/images";
+import { OwlIcon, WolfIcon } from "@/configs/images";
 
 //* redux
 import { setTheme } from "@/redux/themes/action";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link";
 
-const MenuMobile = ({ asPath }) => {
+const MenuMobile = ({ active }) => {
   const { isActiveTheme } = useSelector((state) => state.themes);
   const dispatch = useDispatch();
   const { push } = useRouter();
 
-  const handleClick = (link, e) => {
-    push(link);
-    e.preventDefault();
+  const handleClick = (e) => {
     e.target.blur();
   };
 
@@ -50,20 +49,27 @@ const MenuMobile = ({ asPath }) => {
           className="dropdown-content z-[1] menu px-5 shadow bg-neutral w-52 mt-2 rounded-2xl"
         >
           {navbar_data.map((item, index) => (
-            <div
+            <Link
               tabIndex={0}
               href={item.link}
-              className={`font-semibold my-1 ${
-                asPath === item.link &&
-                (isActiveTheme === "black"
-                  ? " text-[#fcb404]"
-                  : "text-purple-700")
+              onClick={(e) => e.target.blur()}
+              target={`${item.name === "Source" ? "_blank" : ""}`}
+              shallow={true}
+              className={`font-semibold my-1 w-fit ${
+                (active === item.link ||
+                  (active.includes("?") &&
+                    item.link !== "/" &&
+                    item.name !== "Source")) &&
+                `${
+                  isActiveTheme === "black"
+                    ? "text-[#fcb404] hover:text-[#fcb404]"
+                    : "text-purple-700 hover:text-purple-700"
+                }`
               }`}
               key={index}
-              onClick={(e) => handleClick(item?.link, e)}
             >
               {item.name}
-            </div>
+            </Link>
           ))}
         </ul>
       </div>

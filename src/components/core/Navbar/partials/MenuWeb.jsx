@@ -9,19 +9,17 @@ import { navbar_data } from "@/data/navbar";
 import { GithubWhiteIcon, OwlIcon, WolfIcon } from "@/configs/images";
 import { setTheme } from "@/redux/themes/action";
 
-const MenuWeb = ({ asPath, active }) => {
+const MenuWeb = ({ active }) => {
   const { isActiveTheme } = useSelector((state) => state.themes);
 
   const dispatch = useDispatch();
-
-  console.log({ asPath });
-  console.log({ active });
 
   return (
     <div className="hidden md:flex items-center gap-5">
       {navbar_data.slice(0, navbar_data.length - 1).map((item, index) => (
         <Link
           href={item.link}
+          shallow={true}
           className={`font-semibold mt-1 ${
             isActiveTheme === "black"
               ? "border-[#fcb404] hover:text-[#fcb404]"
