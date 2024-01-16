@@ -15,7 +15,7 @@ const PortfolioDetail = () => {
         esse quis obcaecati, odit consequatur beatae modi iste accusantium
         animi, temporibus perspiciatis.
       </p>
-      <div className="mt-5 flex flex-col gap-3">
+      <div className="mt-5 flex flex-col gap-4">
         <PDHeading title="Tech Stack">
           <p>Node JS, Next JS</p>
         </PDHeading>
