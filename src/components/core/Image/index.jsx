@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const CImage = ({ src, alt, w, h, className, layout, style }) => {
   const [isError, setIsError] = useState(false);
-  const link = !isError ? src : "/public/default-image.jpg";
+  const link = !isError ? src : "/default-image.jpg";
 
   const toBase64 = (src) =>
     typeof window === "undefined"

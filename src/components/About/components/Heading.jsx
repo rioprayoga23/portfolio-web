@@ -4,7 +4,6 @@ import Image from "next/image";
 import { IdIcon, Me } from "@/configs/images";
 
 //* components
-import CImage from "@/components/core/Image";
 import SectionLayout from "@/components/core/Layout/SectionLayout";
 
 const Heading = () => {
