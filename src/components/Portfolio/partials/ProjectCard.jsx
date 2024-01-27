@@ -1,16 +1,12 @@
 import CImage from "@/components/core/Image";
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
 
 const ProjectCard = () => {
-  const { isActiveTheme } = useSelector((state) => state.themes);
   const { push } = useRouter();
 
   return (
     <div
-      className={`w-full rounded-xl overflow-hidden cursor-pointer mb-5 ${
-        isActiveTheme == "black" ? "hover:bg-neutral" : "hover:bg-neutral"
-      }  p-3`}
+      className={`w-full rounded-xl overflow-hidden cursor-pointer mb-5 p-3 hover:bg-neutral hover:backdrop-blur-3xl`}
       onClick={() =>
         push({ pathname: "/portfolio", query: { q: "movie" }, slashes: "/" })
       }
@@ -27,10 +23,10 @@ const ProjectCard = () => {
           w={0}
         />
       </div>
-      <h1 className="font-extrabold text-lg mt-2 line-clamp-2 underline">
-        Movie App
+      <h1 className="line-clamp-2 text-lg font-extrabold mt-2 underline">
+        Movie App Movie App Movie App Movie App Movie App
       </h1>
-      <p className="line-clamp-4 text-md">
+      <p className="line-clamp-4 text-base">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ipsum
         dignissimos deserunt quod reprehenderit totam molestiae ducimus
         voluptatibus. Facilis provident architecto quidem assumenda quis
