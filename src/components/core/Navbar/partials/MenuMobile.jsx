@@ -11,18 +11,12 @@ import { OwlIcon, WolfIcon } from "@/configs/images";
 
 //* redux
 import { setTheme } from "@/redux/themes/action";
-import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
 
 const MenuMobile = ({ active }) => {
   const { isActiveTheme } = useSelector((state) => state.themes);
   const dispatch = useDispatch();
-  const { push } = useRouter();
-
-  const handleClick = (e) => {
-    e.target.blur();
-  };
 
   return (
     <div className="flex md:hidden items-center gap-2">

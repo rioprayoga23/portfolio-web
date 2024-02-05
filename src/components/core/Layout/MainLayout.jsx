@@ -4,9 +4,8 @@ import { Anonymous_Pro, Nunito } from "next/font/google";
 
 import dynamic from "next/dynamic";
 import { WorkspaceSpinner } from "../../Workspace3d/loader";
+import Footer from "../Footer/Index";
 import ContentLayout from "./ContentLayout";
-import { useGlobalAudioPlayer } from "react-use-audio-player";
-import { useEffect } from "react";
 
 const anonymous = Anonymous_Pro({
   subsets: ["latin"],
@@ -29,10 +28,10 @@ const Workspace3d = dynamic(
 const MainLayout = () => {
   return (
     <main className={`${nunito.className}`}>
-      {/* Navbar */}
       <Navbar />
       <Workspace3d />
       <ContentLayout />
+      <Footer />
     </main>
   );
 };
