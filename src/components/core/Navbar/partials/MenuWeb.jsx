@@ -23,11 +23,13 @@ const MenuWeb = ({ active }) => {
           className={`font-semibold mt-1 ${
             isActiveTheme === "black"
               ? "border-[#fcb404] hover:text-[#fcb404]"
-              : "border-purple-700 hover:text-purple-700"
+              : "border-success hover:text-success"
           } ${
             (active === item.link ||
               (active.includes("?") && item.link !== "/")) &&
-            "border-b-2"
+            `border-b-2 ${
+              isActiveTheme === "black" ? "text-[#fcb404]" : "text-success"
+            }`
           }`}
           key={index}
         >
@@ -51,7 +53,7 @@ const MenuWeb = ({ active }) => {
           className={`${
             isActiveTheme === "black"
               ? "border-[#fcb404] hover:text-[#fcb404]"
-              : "border-purple-700 hover:text-purple-700"
+              : "border-purple-700 hover:text-success"
           }`}
         >
           Source

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 //* images
-import { IdIcon, Me } from "@/configs/images";
+import { IdIcon, Me, Me2 } from "@/configs/images";
 
 //* components
 import SectionLayout from "@/components/core/Layout/SectionLayout";
@@ -20,11 +20,12 @@ const Heading = () => {
               <Image src={IdIcon} alt="indonesia flag" width={22} />
             </span>
           </div>
+          <div></div>
         </div>
 
-        <div className="rounded-full overflow-hidden w-[110px] border-4 border-white">
+        <div className="rounded-full overflow-hidden w-[110px] h-[110px] border-4 border-white">
           <Image
-            src={Me}
+            src={Me2}
             layout="responsive"
             alt="Rio Prayoga Teja Putra"
             placeholder="blur"

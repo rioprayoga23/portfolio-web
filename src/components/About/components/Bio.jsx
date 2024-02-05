@@ -1,17 +1,18 @@
 import CTitle from "@/components/core/Title";
+import { InfoIcon } from "@/configs/images";
 
 const Bio = () => {
   return (
     <section className="mt-10 lg:mt-0">
-      <CTitle name={"About Me"} />
+      <CTitle name={"About Me"} icon={InfoIcon} />
       <p className="indent-5">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum unde
-        consequatur aliquam dolor repellendus dignissimos a tempora, ducimus,
-        aperiam in quam sequi neque inventore alias consectetur quo ex,
-        perspiciatis hic. Lorem ipsum dolor sit amet, consectetur adipisicing
-        elit. Commodi quam iure tenetur impedit consequatur enim quaerat
-        molestias quisquam, labore laudantium dolore suscipit unde facilis id
-        magni dignissimos totam voluptate magnam?
+        Experienced as a frontend developer and proficient in developing
+        JavaScript projects, including web and mobile applications, using
+        ReactJS, Next JS, React Native and ExpressJS. Passionate about creating
+        visually appealing and user interface friendly. Constantly updated with
+        the latest tech technology. Experienced in working with startup and
+        software house companies, adapting to fast-paced environments, and
+        collaborating effectively with cross-functional teams.
       </p>
     </section>
   );

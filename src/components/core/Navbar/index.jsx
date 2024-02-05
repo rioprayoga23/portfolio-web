@@ -30,7 +30,7 @@ const Navbar = () => {
           <Link
             href="/"
             className={`text-3xl font-bold me-5 ${caveat.className} ${
-              isActiveTheme == "black" ? "text-[#fcb404]" : " text-purple-700"
+              isActiveTheme == "black" ? "text-[#fcb404]" : " text-success"
             }`}
           >
             Rio Prayoga

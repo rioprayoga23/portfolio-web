@@ -2,6 +2,7 @@ import { Fragment } from "react";
 
 //* component
 import Bio from "./components/Bio";
+import Educations from "./components/Educations";
 import Experiences from "./components/Experiences";
 import Heading from "./components/Heading";
 import Headline from "./components/Headline";
@@ -14,6 +15,7 @@ const About = () => {
       <Heading />
       <Bio />
       <Experiences />
+      <Educations />
       <Skills />
     </Fragment>
   );

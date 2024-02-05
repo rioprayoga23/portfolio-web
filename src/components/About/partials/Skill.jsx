@@ -3,7 +3,7 @@ import Image from "next/image";
 const Skill = ({ src, alt, name }) => {
   return (
     <section className="flex flex-col justify-center items-center gap-1">
-      <div className="flex justify-center items-center bg-slate-800 rounded-full w-[73px] h-[73px]">
+      <div className="flex justify-center items-center bg-slate-800 rounded-full w-[70px] h-[70px]">
         <Image
           src={src}
           alt={alt}

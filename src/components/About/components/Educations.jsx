@@ -1,16 +1,16 @@
 //* data
-import { experiencesData } from "@/data/experience";
 
 //* components
 import SectionLayout from "@/components/core/Layout/SectionLayout";
 import CTitle from "@/components/core/Title";
+import { educationsData } from "@/data/education";
 import TimelineItem from "../partials/TimelineItem";
 
-const Experiences = () => {
+const Educations = () => {
   return (
     <SectionLayout>
-      <CTitle name={"Experiences"} />
-      {experiencesData.map((item, index) => (
+      <CTitle name={"Educations"} />
+      {educationsData.map((item, index) => (
         <TimelineItem
           year={item.year}
           role={item.role}
@@ -22,4 +22,4 @@ const Experiences = () => {
   );
 };
 
-export default Experiences;
+export default Educations;

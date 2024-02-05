@@ -63,7 +63,7 @@ const MenuMobile = ({ active }) => {
                 `${
                   isActiveTheme === "black"
                     ? "text-[#fcb404] hover:text-[#fcb404]"
-                    : "text-purple-700 hover:text-purple-700"
+                    : "text-success hover:text-success"
                 }`
               }`}
               key={index}

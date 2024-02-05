@@ -1,8 +1,8 @@
 export const experiencesData = [
   {
-    role: "Fullstack Developer (Intership)",
-    company: "PT Cakrawala Global Informatika",
-    year: "2018",
+    role: "Frontend Developer",
+    company: "Google Dev",
+    year: "2023",
   },
   {
     role: "Frontend Developer (Freelance)",
@@ -10,8 +10,8 @@ export const experiencesData = [
     year: "2020",
   },
   {
-    role: "Frontend Developer",
-    company: "PT Gebra Kreativa Global",
-    year: "2023",
+    role: "Fullstack Developer (Intership)",
+    company: "PT Cakrawala Global Informatika",
+    year: "2018",
   },
 ];

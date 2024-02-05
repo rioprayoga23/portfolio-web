@@ -1,9 +1,9 @@
+import Link from "next/link";
+
 import CImage from "@/components/core/Image";
+import Label from "@/components/core/Label";
 import SectionLayout from "@/components/core/Layout/SectionLayout";
 import CTitle from "@/components/core/Title";
-import { useSelector } from "react-redux";
-import PDHeading from "../partials/PDHeading";
-import Link from "next/link";
 
 const PortfolioDetail = () => {
   return (
@@ -16,15 +16,15 @@ const PortfolioDetail = () => {
         animi, temporibus perspiciatis.
       </p>
       <div className="mt-5 flex flex-col gap-4">
-        <PDHeading title="Tech Stack">
+        <Label title="Tech Stack">
           <p>Node JS, Next JS</p>
-        </PDHeading>
+        </Label>
 
-        <PDHeading title="Other">
+        <Label title="Other">
           <p>Lighthouse Security</p>
-        </PDHeading>
+        </Label>
 
-        <PDHeading title="Show">
+        <Label title="Show">
           <Link
             target="_blank"
             href="https://google.com"
@@ -32,7 +32,7 @@ const PortfolioDetail = () => {
           >
             Movie App
           </Link>
-        </PDHeading>
+        </Label>
 
         <div className="flex flex-col gap-2">
           {Array.from({ length: 4 }).map((_, index) => (

@@ -14,6 +14,8 @@ const {
   PostgreIcon,
   FigmaIcon,
   GitIcon,
+  FramerMotionIcon,
+  ReactQueryIcon,
 } = require("@/configs/images");
 
 export const skills_data = [
@@ -29,6 +31,8 @@ export const skills_data = [
   { icon: NextIcon, name: "NextJs", alt: "next-js icon" },
   { icon: ReactIcon, name: "React Native", alt: "react-native icon" },
   { icon: FlutterIcon, name: "Flutter", alt: "flutter icon" },
+  { icon: ReactQueryIcon, name: "React Query", alt: "react query icon" },
+  { icon: FramerMotionIcon, name: "Framer Motion", alt: "framer motion icon" },
   { icon: TaildwindIcon, name: "Taildwind", alt: "taildwind-css icon" },
   { icon: BootstrapIcon, name: "Bootstrap", alt: "bootstrap icon" },
   { icon: FigmaIcon, name: "Figma", alt: "figma icon" },
