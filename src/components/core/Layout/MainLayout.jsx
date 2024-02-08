@@ -2,10 +2,7 @@ import Navbar from "../Navbar";
 
 import { Anonymous_Pro, Nunito } from "next/font/google";
 
-import dynamic from "next/dynamic";
-import { WorkspaceSpinner } from "../../Workspace3d/loader";
 import Footer from "../Footer/Index";
-import ContentLayout from "./ContentLayout";
 
 const anonymous = Anonymous_Pro({
   subsets: ["latin"],
@@ -17,20 +14,13 @@ const nunito = Nunito({
   weight: ["400", "700"],
 });
 
-const Workspace3d = dynamic(
-  () => import("@/components/Workspace3d/workspace"),
-  {
-    ssr: false,
-    loading: () => <WorkspaceSpinner />,
-  }
-);
-
-const MainLayout = () => {
+const MainLayout = ({ children }) => {
   return (
-    <main className={`${nunito.className}`}>
+    <main
+      className={`flex flex-col h-screen justify-between ${nunito.className}`}
+    >
       <Navbar />
-      <Workspace3d />
-      <ContentLayout />
+      {children}
       <Footer />
     </main>
   );
