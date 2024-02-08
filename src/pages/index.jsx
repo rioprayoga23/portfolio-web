@@ -1,13 +1,14 @@
+import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+
+import useSetTheme from "@/hooks/useSetTheme";
 
 import Preloader from "@/components/Preloader";
 import { WorkspaceSpinner } from "@/components/Workspace3d/loader";
 import ContentLayout from "@/components/core/Layout/ContentLayout";
 import MainLayout from "@/components/core/Layout/MainLayout";
-import useSetTheme from "@/hooks/useSetTheme";
-import { AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 
 const Workspace3d = dynamic(
   () => import("@/components/Workspace3d/workspace"),
