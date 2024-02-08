@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 //* css
 import "@/styles/animation.css";
 import "@/styles/globals.css";
+import "@/styles/preloader.css";
 
 //* redux
 import { store } from "@/redux/store";
