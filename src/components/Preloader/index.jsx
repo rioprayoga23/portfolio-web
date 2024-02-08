@@ -66,7 +66,12 @@ const Preloader = () => {
     >
       {dimension.width > 0 && (
         <>
-          <motion.p variants={opacity} initial="initial" animate="enter">
+          <motion.p
+            variants={opacity}
+            initial="initial"
+            animate="enter"
+            className="text-3xl"
+          >
             <span></span>
             {words[index]}
           </motion.p>

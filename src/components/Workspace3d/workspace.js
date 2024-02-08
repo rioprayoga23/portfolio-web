@@ -92,7 +92,7 @@ const Workspace = () => {
 
         if (frame <= 100) {
           const p = initialCameraPosition;
-          const rotSpeed = -easeOutCirc(frame / 115) * 20;
+          const rotSpeed = -easeOutCirc(frame / 115) * 108;
 
           camera.position.y = 10;
           camera.position.x =
