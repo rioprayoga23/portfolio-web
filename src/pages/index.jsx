@@ -7,6 +7,7 @@ import MainLayout from "@/components/core/Layout/MainLayout";
 import useSetTheme from "@/hooks/useSetTheme";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const Workspace3d = dynamic(
   () => import("@/components/Workspace3d/workspace"),
@@ -18,6 +19,7 @@ const Workspace3d = dynamic(
 
 export default function Home() {
   useSetTheme();
+  const { asPath } = useRouter();
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -33,9 +35,11 @@ export default function Home() {
 
   return (
     <MainLayout>
-      <AnimatePresence mode="wait">
-        {isLoading && <Preloader />}
-      </AnimatePresence>
+      {!asPath.split("/")?.[1] && (
+        <AnimatePresence mode="wait">
+          {isLoading && <Preloader />}
+        </AnimatePresence>
+      )}
       <Workspace3d />
       <ContentLayout />
     </MainLayout>
