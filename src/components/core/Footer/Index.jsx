@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="footer footer-center p-4 bg-base-300 text-base-content">
       <aside>
         <p
-          className={
+          className={`font-semibold ${
             isActiveTheme === "black" ? "text-[#fcb404]" : "text-success"
-          }
+          }`}
         >
           Copyright © 2024 - Rio Prayoga Teja Putra
         </p>

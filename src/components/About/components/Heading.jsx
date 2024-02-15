@@ -1,12 +1,16 @@
 import Image from "next/image";
 
 //* images
-import { IdIcon, Me, Me2 } from "@/configs/images";
+import { IdIcon, Me2 } from "@/configs/images";
 
 //* components
 import SectionLayout from "@/components/core/Layout/SectionLayout";
+import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 
 const Heading = () => {
+  const { isActiveTheme } = useSelector((state) => state.themes);
+
   return (
     <SectionLayout>
       <div className="flex flex-col-reverse items-center md:items-start md:flex-row">
@@ -20,7 +24,24 @@ const Heading = () => {
               <Image src={IdIcon} alt="indonesia flag" width={22} />
             </span>
           </div>
-          <div></div>
+
+          <div className="flex justify-center md:justify-start gap-3 gap-md-2 mt-3">
+            <a
+              href="https://www.linkedin.com/in/rioprayogatejaputra/"
+              target="_blank"
+            >
+              <FaLinkedin size={25} />
+            </a>
+            <a href="https://wa.me/6285795344094" target="_blank">
+              <FaWhatsapp size={25} />
+            </a>
+            <a href="https://instagram.com/riopryogap" target="_blank">
+              <FaInstagram size={25} />
+            </a>
+            <a href="https://github.com/rioprayoga23" target="_blank">
+              <FaGithub size={25} />
+            </a>
+          </div>
         </div>
 
         <div className="rounded-full overflow-hidden w-[110px] h-[110px] border-4 border-white">

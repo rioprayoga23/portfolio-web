@@ -1,9 +1,10 @@
+import SectionLayout from "@/components/core/Layout/SectionLayout";
 import CTitle from "@/components/core/Title";
 import { InfoIcon } from "@/configs/images";
 
 const Bio = () => {
   return (
-    <section className="mt-10 lg:mt-0">
+    <SectionLayout>
       <CTitle name={"About Me"} icon={InfoIcon} />
       <p className="indent-5">
         Experienced as a frontend developer and proficient in developing
@@ -14,7 +15,7 @@ const Bio = () => {
         software house companies, adapting to fast-paced environments, and
         collaborating effectively with cross-functional teams.
       </p>
-    </section>
+    </SectionLayout>
   );
 };
 
