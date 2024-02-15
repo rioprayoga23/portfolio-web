@@ -36,11 +36,11 @@ export default function Home() {
 
   return (
     <MainLayout>
-      {!asPath.split("/")?.[1] && (
+      {/* {!asPath.split("/")?.[1] && (
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}
         </AnimatePresence>
-      )}
+      )} */}
       <Workspace3d />
       <ContentLayout />
     </MainLayout>
