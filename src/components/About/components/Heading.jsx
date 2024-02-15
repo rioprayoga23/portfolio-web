@@ -6,11 +6,8 @@ import { IdIcon, Me2 } from "@/configs/images";
 //* components
 import SectionLayout from "@/components/core/Layout/SectionLayout";
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
-import { useSelector } from "react-redux";
 
 const Heading = () => {
-  const { isActiveTheme } = useSelector((state) => state.themes);
-
   return (
     <SectionLayout>
       <div className="flex flex-col-reverse items-center md:items-start md:flex-row">
