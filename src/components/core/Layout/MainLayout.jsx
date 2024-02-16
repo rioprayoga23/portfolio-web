@@ -4,11 +4,6 @@ import { Anonymous_Pro, Nunito } from "next/font/google";
 
 import Footer from "../Footer/Index";
 
-const anonymous = Anonymous_Pro({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
 const nunito = Nunito({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -16,11 +11,9 @@ const nunito = Nunito({
 
 const MainLayout = ({ children }) => {
   return (
-    <main
-      className={`flex flex-col h-screen justify-between ${nunito.className}`}
-    >
+    <main className={`flex flex-col h-screen ${nunito.className}`}>
       <Navbar />
-      {children}
+      <section className="flex-1">{children}</section>
       <Footer />
     </main>
   );
