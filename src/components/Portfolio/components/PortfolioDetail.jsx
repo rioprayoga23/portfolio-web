@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import CImage from "@/components/core/Image";
 import Label from "@/components/core/Label";
