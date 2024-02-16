@@ -6,6 +6,9 @@ import SectionLayout from "@/components/core/Layout/SectionLayout";
 import CTitle from "@/components/core/Title";
 
 const PortfolioDetail = () => {
+  const { asPath } = useRouter();
+  console.log(asPath);
+
   return (
     <SectionLayout>
       <CTitle name="Movies App" />
