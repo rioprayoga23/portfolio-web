@@ -25,3 +25,4 @@ export { default as WolfIcon } from "/public/wolf.png";
 export { default as OwlIcon } from "/public/owl.png";
 export { default as ReactQueryIcon } from "/public/react-query.png";
 export { default as FramerMotionIcon } from "/public/framer-motion.png";
+export { default as TiketkuWebCover } from "/public/tiketku-web-Cover.png";

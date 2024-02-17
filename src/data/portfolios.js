@@ -31,6 +31,8 @@ export const portfolioData = [
     name: "E-Artos",
     slug: "e-artos",
     short_description: "E-Artos is a web application like an E-wallet.",
+    description:
+      "E-Artos is a web application like an e-wallet. This application allows users to make financial transactions with other users and users can fill in balances through the TopUp feature that is already available on E-Artos.",
     img: "/e-artos-Cover.png",
     tech: ["Next JS", "Redux", "Taildwind CSS", "DaisyUI", "Formik"],
     desc_img: [

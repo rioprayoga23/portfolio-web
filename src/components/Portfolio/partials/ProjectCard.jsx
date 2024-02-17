@@ -17,7 +17,12 @@ const ProjectCard = ({ item }) => {
       onClick={() => push({ pathname: "/portfolio", query: { q: item.slug } })}
     >
       <figure className="w-full h-[190px] sm:h-[150px] md:h-[170px] relative">
-        <CImage src={item.img} alt="" className="object-cover" layout="fill" />
+        <CImage
+          src={item.img}
+          alt={item.name}
+          className="object-cover"
+          layout="fill"
+        />
       </figure>
       <div className="p-3 bg-neutral h-24">
         <div className="flex items-center gap-2">

@@ -1,12 +1,14 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { FaLink } from "react-icons/fa6";
+
+import { portfolioData } from "@/data/portfolios";
 
 import CImage from "@/components/core/Image";
 import Label from "@/components/core/Label";
 import SectionLayout from "@/components/core/Layout/SectionLayout";
 import CTitle from "@/components/core/Title";
-import { useRouter } from "next/router";
-import { portfolioData } from "@/data/portfolios";
-import { FaLink } from "react-icons/fa6";
+import Image from "next/image";
 
 const PortfolioDetail = () => {
   const { query } = useRouter();
