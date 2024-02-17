@@ -1,19 +1,16 @@
 import { useSelector } from "react-redux";
 
-const Label = ({ title, children, className }) => {
+const Label = ({ title }) => {
   const { isActiveTheme } = useSelector((state) => state.themes);
 
   return (
-    <div className={`flex gap-2 ${className}`}>
-      <h2
-        className={`bg-neutral px-1 rounded-sm font-bold flex-shrink-0 h-fit ${
-          isActiveTheme == "black" ? "text-[#fcb404]" : " text-success"
-        }`}
-      >
-        {title}
-      </h2>
-      {children}
-    </div>
+    <h2
+      className={`w-fit flex-shrink-0 bg-neutral px-1 rounded-sm font-bold h-fit ${
+        isActiveTheme == "black" ? "text-[#fcb404]" : " text-success"
+      }`}
+    >
+      {title}
+    </h2>
   );
 };
 

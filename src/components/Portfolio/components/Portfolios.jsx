@@ -1,10 +1,12 @@
-import { Fragment } from "react";
 import { useSelector } from "react-redux";
 
+//* data
+import { portfolioData } from "@/data/portfolios";
+
 //* components
+import SectionLayout from "@/components/core/Layout/SectionLayout";
 import CTitle from "@/components/core/Title";
 import ProjectCard from "../partials/ProjectCard";
-import SectionLayout from "@/components/core/Layout/SectionLayout";
 
 const Portfolios = () => {
   const { isActiveTheme } = useSelector((state) => state.themes);
@@ -35,8 +37,8 @@ const Portfolios = () => {
       </p>
 
       <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-5 mt-5">
-        {Array.from({ length: 4 }).map((_, index) => (
-          <ProjectCard key={index} />
+        {portfolioData.map((item, index) => (
+          <ProjectCard item={item} key={index} />
         ))}
       </div>
     </SectionLayout>

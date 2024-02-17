@@ -1,8 +1,9 @@
-import CImage from "@/components/core/Image";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
-const ProjectCard = () => {
+import CImage from "@/components/core/Image";
+
+const ProjectCard = ({ item }) => {
   const { isActiveTheme } = useSelector((state) => state.themes);
   const { push } = useRouter();
 
@@ -13,21 +14,14 @@ const ProjectCard = () => {
           ? "md:hover:shadow-[#fcb404]/70"
           : "md:hover:shadow-success/70"
       }`}
-      onClick={() => push({ pathname: "/portfolio", query: { q: "movie" } })}
+      onClick={() => push({ pathname: "/portfolio", query: { q: item.slug } })}
     >
       <figure className="w-full h-[190px] sm:h-[150px] md:h-[170px] relative">
-        <CImage
-          src={
-            "https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          }
-          alt=""
-          className="object-cover"
-          layout="fill"
-        />
+        <CImage src={item.img} alt="" className="object-cover" layout="fill" />
       </figure>
-      <div className="p-3 bg-neutral">
+      <div className="p-3 bg-neutral h-24">
         <div className="flex items-center gap-2">
-          <h2 className="text-lg font-bold">Shoes!</h2>
+          <h2 className="text-lg font-bold truncate">{item.name}</h2>
           <span
             className={`badge ${
               isActiveTheme == "black" ? "bg-[#fcb404]" : "badge-success"
@@ -36,9 +30,7 @@ const ProjectCard = () => {
             Web
           </span>
         </div>
-        <p className="text-sm">
-          If a dog chews shoes whose shoes does he choose?
-        </p>
+        <p className="text-sm line-clamp-2">{item.short_description}</p>
       </div>
     </div>
   );

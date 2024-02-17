@@ -1,49 +1,57 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import CImage from "@/components/core/Image";
 import Label from "@/components/core/Label";
 import SectionLayout from "@/components/core/Layout/SectionLayout";
 import CTitle from "@/components/core/Title";
+import { useRouter } from "next/router";
+import { portfolioData } from "@/data/portfolios";
+import { FaLink } from "react-icons/fa6";
 
 const PortfolioDetail = () => {
+  const { query } = useRouter();
+
+  const detail_data = portfolioData?.filter(
+    (item) => item.slug === query?.q
+  )?.[0];
+
   return (
     <SectionLayout>
-      <CTitle name="Movies App" />
-      <p className="indent-5">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa nam
-        commodi ducimus repellat similique maxime tempore aspernatur nesciunt
-        esse quis obcaecati, odit consequatur beatae modi iste accusantium
-        animi, temporibus perspiciatis.
-      </p>
+      <CTitle name={detail_data?.name} />
+
+      <p className="indent-5">{detail_data?.description}</p>
       <div className="mt-5 flex flex-col gap-4">
-        <Label title="Tech Stack">
-          <p>Node JS, Next JS</p>
-        </Label>
+        <div className="flex gap-4">
+          <Label title="Tech Stack" />
+          <p>{detail_data.tech.join(", ")}</p>
+        </div>
 
-        <Label title="Other">
-          <p>Lighthouse Security</p>
-        </Label>
+        {detail_data.other && (
+          <div className="flex gap-4">
+            <Label title="Other" />
+            {/* <p>{detail_data.tech.join(", ")}</p> */}
+          </div>
+        )}
 
-        <Label title="Show">
-          <Link
-            target="_blank"
-            href="https://google.com"
-            className={`underline`}
-          >
-            Movie App
-          </Link>
-        </Label>
+        <div className="flex gap-4">
+          <Label title="Show" />
+          <div className="flex items-center gap-1 underline">
+            <Link target="_blank" href={detail_data.show}>
+              {detail_data?.name}
+            </Link>
+            <FaLink />
+          </div>
+        </div>
 
-        <div className="flex flex-col gap-2">
-          {Array.from({ length: 4 }).map((_, index) => (
+        <div className="mt-5 flex flex-col gap-2">
+          {detail_data.desc_img?.map((item, index) => (
             <CImage
-              src="/"
-              alt=""
+              src={item}
+              alt={detail_data.name}
               layout="responsive"
-              h={0}
-              w={0}
               key={index}
+              w={0}
+              h={0}
             />
           ))}
         </div>
