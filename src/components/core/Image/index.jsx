@@ -15,9 +15,7 @@ const CImage = ({ src, alt, w, h, className, layout, style, shape }) => {
         width={w}
         height={h}
         className={`object-cover duration-700 ease-in-out ${className} ${
-          isLoading
-            ? "scale-150 blur-xl grayscale"
-            : "scale-100 blur-0 grayscale-0"
+          isLoading ? "scale-150 blur-xl" : "scale-100 blur-0"
         }`}
         layout={layout}
         style={style}
