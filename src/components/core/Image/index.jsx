@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const CImage = ({ src, alt, w, h, className, layout, style, shape }) => {
+const CImage = ({ src, alt, w, h, className, layout, style }) => {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   const link = !isError ? src : "/default-image.jpg";
 
   return (
-    <div className={`relative h-full w-full ${!shape && "overflow-hidden"}`}>
+    <div className={`relative h-full w-full overflow-hidden`}>
       <Image
         src={link}
         alt={alt}

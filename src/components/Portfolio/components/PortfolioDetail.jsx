@@ -43,7 +43,6 @@ const PortfolioDetail = ({ detailPortfolio }) => {
               layout="responsive"
               w={0}
               h={0}
-              shape={detailPortfolio?.slug === "tiketku-mobile"}
               key={index}
             />
           ))}
