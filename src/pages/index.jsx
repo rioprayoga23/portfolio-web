@@ -1,12 +1,11 @@
 import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 
 import useSetTheme from "@/hooks/useSetTheme";
 
 import { WorkspaceSpinner } from "@/components/Workspace3d/loader";
 import ContentLayout from "@/components/core/Layout/ContentLayout";
 import MainLayout from "@/components/core/Layout/MainLayout";
+import { portfolioData } from "@/data/portfolios";
 
 const Workspace3d = dynamic(
   () => import("@/components/Workspace3d/workspace"),
@@ -16,34 +15,21 @@ const Workspace3d = dynamic(
   }
 );
 
-export default function Home() {
+export default function Home({ detailPortfolio }) {
   useSetTheme();
-  // const { asPath } = useRouter();
-  // const [isLoading, setIsLoading] = useState(true);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     setTimeout(() => {
-  //       setIsLoading(false);
-  //       document.body.style.cursor = "default";
-  //       window.scrollTo(0, 0);
-  //     }, 2000);
-  //   })();
-  // }, []);
 
   return (
     <MainLayout>
-      {/* {!asPath.split("/")?.[1] && (
-        <AnimatePresence mode="wait">
-          {isLoading && <Preloader />}
-        </AnimatePresence>
-      )} */}
       <Workspace3d />
-      <ContentLayout />
+      <ContentLayout detailPortfolio={detailPortfolio} />
     </MainLayout>
   );
 }
 
-export const getServerSideProps = async (context) => {
-  return { props: {} };
+export const getServerSideProps = async ({ query }) => {
+  const detailPortfolio = portfolioData.filter(
+    (item) => item.slug === query.q
+  )?.[0];
+
+  return { props: { detailPortfolio: detailPortfolio ?? {} } };
 };

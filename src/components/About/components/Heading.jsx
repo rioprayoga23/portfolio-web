@@ -1,11 +1,12 @@
 import Image from "next/image";
+import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 
 //* images
 import { IdIcon, Me2 } from "@/configs/images";
 
 //* components
+import CImage from "@/components/core/Image";
 import SectionLayout from "@/components/core/Layout/SectionLayout";
-import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 
 const Heading = () => {
   return (
@@ -42,7 +43,7 @@ const Heading = () => {
         </div>
 
         <div className="rounded-full overflow-hidden w-[110px] h-[110px] border-4 border-white">
-          <Image
+          <CImage
             src={Me2}
             layout="responsive"
             alt="Rio Prayoga Teja Putra"

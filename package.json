@@ -12,6 +12,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@plaiceholder/next": "^3.0.0",
+    "@redux-devtools/extension": "^3.3.0",
     "@reduxjs/toolkit": "^2.0.1",
     "cookies-next": "^4.1.0",
     "framer-motion": "^10.16.14",

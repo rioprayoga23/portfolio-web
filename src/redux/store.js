@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 
 //* reducer
 import themes from "./themes/reducer";
+import { composeWithDevTools } from "@redux-devtools/extension";
 
 const rootReducer = combineReducers({
   themes,
@@ -21,7 +22,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
-  // devTools: isProduction ? false : composeWithDevTools(),
+  devTools: isProduction ? false : composeWithDevTools(),
 });
 
 // store.__persistor = persistStore(store);
