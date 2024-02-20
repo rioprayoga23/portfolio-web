@@ -2,11 +2,11 @@ export const portfolioData = [
   {
     name: "IFG Life Corporate Website",
     slug: "ifg-corporate-website",
-    short_description: "Revamping IFG Life Website from scrach",
+    short_description: "Revamping IFG Life website from scrach.",
     description:
       "Revamping a corporate company website operating in the insurance sector. This project involves the process of slicing and integrating many features, such as product, help center, business partner, article, and others. With a primary focus on optimal performance, strong SEO, and guaranteed security.",
     img: "/ifg-cover-landing.png",
-    tech: ["Next JS", "Redux", "Bootstrap", "MUI", "Formik"],
+    tech: ["Next JS", "Redux", "Bootstrap", "MUI", "Formik."],
     desc_img: ["/ifg-home.png", "/ifg-product.png", "/ifg-kalkulator.png"],
     other: [
       "Security",
@@ -14,7 +14,7 @@ export const portfolioData = [
       "Google Tag Manager",
       "Google Analitcs",
       "Lighthouse Performance",
-      "Memory Usage Control",
+      "Memory Usage Control.",
     ],
     type: "Web",
     show: "https://ifg-life.id/",
@@ -22,30 +22,43 @@ export const portfolioData = [
 
   {
     name: "CMS IFG Life Corporate Website",
-    slug: "cms-ifg",
-    short_description: "Revamping IFG Life Website from scrach",
+    slug: "cms-ifg-corporate-website",
+    short_description:
+      "Content Management System for IFG Life corporate website.",
     description:
-      "TiketKu is a web application for ordering movie tickets. With tiketku, users can order tickets for the desired movie. This application also provadmin dashboard feature to manage film-related data.",
+      "This project is a content management system, to manage all the content that will be displayed on the IFG Life Corporate Website.",
     img: "/ifg-cover-cms.png",
-    tech: [
-      "React",
-      "Redux",
-      "Taildwind CSS",
-      "DaisyUI",
-      "Formik",
-      "Express",
-      "PostgreSQL",
-    ],
-    desc_img: ["/public/ifg-cms-login.png"],
-    other: false,
+    tech: ["Next JS", "Redux", "Taildwind CSS", "Formik."],
+    desc_img: ["/ifg-cms-login.png"],
+    other: ["Security", "Authentication With Microsoft Azure."],
     type: "Web",
-    show: "https://github.com/rioprayoga23/fw12-frontend",
+    show: false,
+  },
+
+  {
+    name: "Orderia",
+    slug: "orderia",
+    short_description: "Web Application for finding restaurants.",
+    description:
+      "With Orderia, you can search for nearby restaurants, popular restaurants and even make reservations, and many more features provided by Orderia.",
+    img: "/orderia-cover.png",
+    tech: ["Next JS", "Redux", "Bootstrap", "MUI", "Formik."],
+    desc_img: ["/orderia-home.png", "/orderia-merchant.png"],
+    other: [
+      "Security",
+      "SEO",
+      "Google Tag Manager",
+      "Google Analitcs",
+      "Dynamic Menu Render.",
+    ],
+    type: "Web",
+    show: "MAINTENANCE",
   },
 
   {
     name: "TiketKu",
     slug: "tiketku",
-    short_description: "Web application for ordering movie tickets.",
+    short_description: "Web Application for ordering movie tickets.",
     description:
       "TiketKu is a web application for ordering movie tickets. With tiketku, users can order tickets for the desired movie. This application also provadmin dashboard feature to manage film-related data.",
     img: "/tiketku-web-Cover.png",
@@ -72,7 +85,7 @@ export const portfolioData = [
   {
     name: "E-Artos",
     slug: "e-artos",
-    short_description: "E-Artos is a web application like an E-wallet.",
+    short_description: "Web Application like an E-wallet.",
     description:
       "E-Artos is a web application like an e-wallet. This application allows users to make financial transactions with other users and users can fill in balances through the TopUp feature that is already available on E-Artos.",
     img: "/e-artos-Cover.png",

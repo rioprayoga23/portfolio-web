@@ -1,16 +1,14 @@
 import React from "react";
 
-const CModal = ({ children }) => {
+const CModal = ({ children, refModal }) => {
   return (
-    <dialog id="my_modal_2" className="modal modal-bottom sm:modal-middle">
-      <div className="relative modal-box bg-neutral rounded-t-2xl sm:rounded-2xl">
-        <form method="dialog">
-          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 bg-slate-400 text-black">
-            ✕
-          </button>
-        </form>
+    <dialog id="my_modal_2" className="modal" ref={refModal}>
+      <div className="modal-box bg-neutral rounded-2xl">
         <div>{children}</div>
       </div>
+      <form method="dialog" className="modal-backdrop">
+        <button>close</button>
+      </form>
     </dialog>
   );
 };

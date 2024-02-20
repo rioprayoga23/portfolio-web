@@ -26,3 +26,4 @@ export { default as OwlIcon } from "/public/owl.png";
 export { default as ReactQueryIcon } from "/public/react-query.png";
 export { default as FramerMotionIcon } from "/public/framer-motion.png";
 export { default as TiketkuWebCover } from "/public/tiketku-web-Cover.png";
+export { default as CodingAlert } from "/public/coding-alert.gif";
