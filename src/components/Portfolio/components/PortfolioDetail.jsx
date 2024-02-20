@@ -21,7 +21,7 @@ const PortfolioDetail = ({ detailPortfolio }) => {
         {detailPortfolio.other && (
           <div className="flex gap-4">
             <Label title="Other" />
-            {/* <p>{detailPortfolio.tech.join(", ")}</p> */}
+            <p>{detailPortfolio.other.join(", ")}</p>
           </div>
         )}
 

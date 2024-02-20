@@ -27,7 +27,7 @@ const ProjectCard = ({ item }) => {
               isActiveTheme == "black" ? "bg-[#fcb404]" : "badge-success"
             }  rounded-xl text-xs font-semibold text-neutral`}
           >
-            Web
+            {item.type}
           </span>
         </div>
         <p className="text-sm line-clamp-2">{item.short_description}</p>

@@ -1,11 +1,53 @@
 export const portfolioData = [
   {
-    id: "1",
+    name: "IFG Life Corporate Website",
+    slug: "ifg-corporate-website",
+    short_description: "Revamping IFG Life Website from scrach",
+    description:
+      "Revamping a corporate company website operating in the insurance sector. This project involves the process of slicing and integrating many features, such as product, help center, business partner, article, and others. With a primary focus on optimal performance, strong SEO, and guaranteed security.",
+    img: "/ifg-cover-landing.png",
+    tech: ["Next JS", "Redux", "Bootstrap", "MUI", "Formik"],
+    desc_img: ["/ifg-home.png", "/ifg-product.png", "/ifg-kalkulator.png"],
+    other: [
+      "Security",
+      "SEO",
+      "Google Tag Manager",
+      "Google Analitcs",
+      "Lighthouse Performance",
+      "Memory Usage Control",
+    ],
+    type: "Web",
+    show: "https://ifg-life.id/",
+  },
+
+  {
+    name: "CMS IFG Life Corporate Website",
+    slug: "cms-ifg",
+    short_description: "Revamping IFG Life Website from scrach",
+    description:
+      "TiketKu is a web application for ordering movie tickets. With tiketku, users can order tickets for the desired movie. This application also provadmin dashboard feature to manage film-related data.",
+    img: "/ifg-cover-cms.png",
+    tech: [
+      "React",
+      "Redux",
+      "Taildwind CSS",
+      "DaisyUI",
+      "Formik",
+      "Express",
+      "PostgreSQL",
+    ],
+    desc_img: ["/public/ifg-cms-login.png"],
+    other: false,
+    type: "Web",
+    show: "https://github.com/rioprayoga23/fw12-frontend",
+  },
+
+  {
     name: "TiketKu",
     slug: "tiketku",
     short_description: "Web application for ordering movie tickets.",
     description:
-      "TiketKu is a web application for ordering movie tickets. With tiketku, users can order tickets for the desired movie. This application also provides an admin dashboard feature to manage film-related data.",
+      "TiketKu is a web application for ordering movie tickets. With tiketku, users can order tickets for the desired movie. This application also provadmin dashboard feature to manage film-related data.",
     img: "/tiketku-web-Cover.png",
     tech: [
       "React",
@@ -24,10 +66,10 @@ export const portfolioData = [
       "/tiketku-web-Result.png",
     ],
     other: false,
+    type: "Web",
     show: "https://github.com/rioprayoga23/fw12-frontend",
   },
   {
-    id: "2",
     name: "E-Artos",
     slug: "e-artos",
     short_description: "E-Artos is a web application like an E-wallet.",
@@ -42,10 +84,10 @@ export const portfolioData = [
       "/e-artos-Success.png",
     ],
     other: false,
+    type: "Web",
     show: "https://github.com/rioprayoga23/e-artos",
   },
   {
-    id: "3",
     name: "TiketKu Mobile",
     slug: "tiketku-mobile",
     description:
@@ -61,6 +103,7 @@ export const portfolioData = [
       "/rnTicket.png",
     ],
     other: false,
+    type: "Mobile",
     show: "https://github.com/rioprayoga23/fw12-rn-TiketKu",
   },
 ];
