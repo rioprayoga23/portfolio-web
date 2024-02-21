@@ -56,6 +56,34 @@ export const portfolioData = [
   },
 
   {
+    name: "CMS Orderia",
+    slug: "cms-orderia",
+    short_description: "Content Management System for Orderia.",
+    description:
+      "This project is a content management system, to manage all the content that will be displayed on the Orderia website.",
+    img: "/orderia-cms-cover.png",
+    tech: ["Next JS", "Redux", "Taildwind CSS", "Formik."],
+    desc_img: ["/orderia-cms-login.png"],
+    other: false,
+    type: "Web",
+    show: false,
+  },
+
+  {
+    name: "DPW Data Center Jawa Barat",
+    slug: "dpw-jawa-barat",
+    short_description: "Web Application for a group's members.",
+    description:
+      "This project records all members of a group in West Java and can determine their location via maps.",
+    img: "/dpw-cover.png",
+    tech: ["Next JS", "Redux", "Taildwind CSS", "Formik."],
+    desc_img: ["/dpw-login.png", "/dpw-maps.png"],
+    other: false,
+    type: "Web",
+    show: false,
+  },
+
+  {
     name: "TiketKu",
     slug: "tiketku",
     short_description: "Web Application for ordering movie tickets.",
