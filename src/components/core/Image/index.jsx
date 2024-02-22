@@ -9,7 +9,7 @@ const CImage = ({ src, alt, w, h, className, layout, style }) => {
 
   return (
     <div
-      className={`duration-700 ease-in-out relative h-full w-full overflow-hidden ${
+      className={`rounded-none duration-700 ease-in-out relative h-full w-full overflow-hidden ${
         isLoading ? "skeleton bg-neutral" : "bg-transparent"
       }`}
     >
