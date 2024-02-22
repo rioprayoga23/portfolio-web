@@ -8,7 +8,11 @@ const CImage = ({ src, alt, w, h, className, layout, style }) => {
   const link = !isError ? src : "/default-image.jpg";
 
   return (
-    <div className={`relative h-full w-full overflow-hidden`}>
+    <div
+      className={`duration-700 ease-in-out relative h-full w-full overflow-hidden ${
+        isLoading ? "skeleton bg-neutral" : "bg-transparent"
+      }`}
+    >
       <Image
         src={link}
         alt={alt}
