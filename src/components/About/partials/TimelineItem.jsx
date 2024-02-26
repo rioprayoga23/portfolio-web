@@ -4,7 +4,7 @@ const TimelineItem = ({ year, role, company, last }) => {
   return (
     <section className={`text-start flex gap-4 ${!last && "pb-4"}`}>
       <Label title={year} />
-      <div className="mt-[-5px]">
+      <div>
         <h3 className="font-bold">{role}</h3>
         <p className="m-0">{company}</p>
       </div>
