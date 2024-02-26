@@ -1,10 +1,10 @@
 import Label from "@/components/core/Label";
 
-const TimelineItem = ({ year, role, company }) => {
+const TimelineItem = ({ year, role, company, last }) => {
   return (
-    <section className="text-start flex gap-4 pb-4">
+    <section className={`text-start flex gap-4 ${!last && "pb-4"}`}>
       <Label title={year} />
-      <div>
+      <div className="mt-[-5px]">
         <h3 className="font-bold">{role}</h3>
         <p className="m-0">{company}</p>
       </div>
