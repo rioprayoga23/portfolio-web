@@ -10,7 +10,7 @@ const CImage = ({ src, alt, w, h, className, layout, style }) => {
   return (
     <div
       className={`rounded-none duration-700 ease-in-out relative h-full w-full overflow-hidden ${
-        isLoading ? "skeleton bg-gray-700" : "bg-transparent"
+        isLoading ? "wave-animation bg-gray-700" : "bg-transparent"
       }`}
     >
       <Image
