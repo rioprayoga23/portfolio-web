@@ -2,7 +2,7 @@ import Image from "next/image";
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 
 //* images
-import { IdIcon, Me2 } from "@/configs/images";
+import { IdIcon, Me, Me2 } from "@/configs/images";
 
 //* components
 import CImage from "@/components/core/Image";
@@ -44,7 +44,7 @@ const Heading = () => {
 
         <div className="rounded-full overflow-hidden w-[110px] h-[110px] border-4 border-white">
           <CImage
-            src={Me2}
+            src={Me}
             layout="responsive"
             alt="Rio Prayoga Teja Putra"
             placeholder="blur"

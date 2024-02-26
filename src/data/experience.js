@@ -1,8 +1,8 @@
 export const experiencesData = [
   {
     role: "Frontend Developer",
-    company: "Google Dev",
-    year: "2023",
+    company: "PT Gebra Kreativa Global",
+    year: "2023 - Present",
   },
   {
     role: "Frontend Developer (Freelance)",
