@@ -20,13 +20,13 @@ const PortfolioDetail = ({ detailPortfolio }) => {
         <div className="mt-5 flex flex-col gap-4">
           <div className="flex gap-4">
             <Label title="Tech Stack" />
-            <p>{detailPortfolio.tech.join(", ")}</p>
+            <p>{detailPortfolio.tech?.join(", ")}</p>
           </div>
 
           {detailPortfolio.other && (
             <div className="flex gap-4">
               <Label title="Other" />
-              <p>{detailPortfolio.other.join(", ")}</p>
+              <p>{detailPortfolio.other?.join(", ")}</p>
             </div>
           )}
 
