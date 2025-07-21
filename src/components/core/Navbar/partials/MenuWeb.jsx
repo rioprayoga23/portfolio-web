@@ -11,7 +11,7 @@ const MenuWeb = ({ active }) => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/cv.pdf";
+    link.href = "/RIO_PRAYOGA_TEJA_PUTRA_CV.pdf";
     link.download = "RIO_PRAYOGA_TEJA_PUTRA_CV";
     link.target = "_blank";
 
