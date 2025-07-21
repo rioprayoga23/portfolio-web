@@ -9,7 +9,7 @@ import TimelineItem from "../partials/TimelineItem";
 const Experiences = () => {
   return (
     <SectionLayout>
-      <CTitle name={"Experiences"} />
+      <CTitle name={"PROFESSIONAL EXPERIENCE"} />
       {experiencesData.map((item, index) => (
         <TimelineItem
           year={item.year}
