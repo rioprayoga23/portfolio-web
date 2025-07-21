@@ -16,11 +16,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 const MenuMobile = ({ active }) => {
   const { isActiveTheme } = useSelector((state) => state.themes);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <div className="flex md:hidden items-center gap-2">
-      <button
+      {/* <button
         onClick={() =>
           dispatch(setTheme(isActiveTheme === "dark" ? "black" : "dark"))
         }
@@ -31,7 +31,7 @@ const MenuMobile = ({ active }) => {
           width={25}
           height={25}
         />
-      </button>
+      </button> */}
 
       <div className="dropdown dropdown-end">
         <div tabIndex={0} role="button">

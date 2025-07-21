@@ -16,22 +16,21 @@ const Portfolios = () => {
       <CTitle name="Projects I've Built" />
 
       <p>
-        Every project presents a{" "}
+        Each project is a{" "}
         <span
           className={`font-bold ${
             isActiveTheme == "black" ? "text-[#fcb404]" : "text-success"
           }`}
         >
-          challenge
+          journey of innovation
         </span>
-        , offering an opportunity to acquire new{" "}
+        , where creativity meets technology to solve{" "}
         <span
           className={`font-bold ${
             isActiveTheme == "black" ? "text-[#fcb404]" : "text-success"
           }`}
         >
-          {" "}
-          knowledge
+          real-world problems
         </span>
         .
       </p>

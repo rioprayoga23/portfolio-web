@@ -8,7 +8,7 @@ const statuslist = {
 };
 
 const initialState = {
-  isActiveTheme: "dark",
+  isActiveTheme: "black",
 };
 
 export default function reducer(state = initialState, action) {

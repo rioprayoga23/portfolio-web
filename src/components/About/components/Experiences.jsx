@@ -17,6 +17,7 @@ const Experiences = () => {
           company={item.company}
           column={true}
           last={experiencesData.length - 1 === index}
+          now={item.now}
           key={index}
         />
       ))}

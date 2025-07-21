@@ -11,7 +11,7 @@ const Footer = () => {
             isActiveTheme === "black" ? "text-[#fcb404]" : "text-success"
           }`}
         >
-          Copyright © 2024 - Rio Prayoga Teja Putra
+          Copyright © {new Date().getFullYear()} - Rio Prayoga Teja Putra
         </p>
       </aside>
     </footer>

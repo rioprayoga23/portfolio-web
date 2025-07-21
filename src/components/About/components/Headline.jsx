@@ -13,7 +13,7 @@ const Headline = () => {
       >
         <h1
           className={`text-[23px] ${vtFont.className}`}
-        >{`Hello, I'am Frontend Developer🤙`}</h1>
+        >{`Hello, I'am Frontend Engineer`}</h1>
       </div>
     </section>
   );

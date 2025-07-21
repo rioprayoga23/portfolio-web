@@ -5,7 +5,7 @@ const Label = ({ title }) => {
 
   return (
     <h2
-      className={`w-fit flex-shrink-0 bg-neutral px-1 rounded-sm font-bold h-fit ${
+      className={`w-fit flex-shrink-0 bg-neutral py-1 px-2 rounded-md font-bold h-fit ${
         isActiveTheme == "black" ? "text-[#fcb404]" : " text-success"
       }`}
     >

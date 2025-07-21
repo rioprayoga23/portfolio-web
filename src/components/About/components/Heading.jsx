@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 
 //* images
-import { IdIcon, Me, Me2 } from "@/configs/images";
+import { IdIcon, Me } from "@/configs/images";
 
 //* components
 import CImage from "@/components/core/Image";
@@ -24,21 +24,21 @@ const Heading = () => {
           </div>
 
           <div className="flex justify-center md:justify-start gap-3 gap-md-2 mt-3">
+            <a href="https://wa.me/6283133092293" target="_blank">
+              <FaWhatsapp size={25} />
+            </a>
             <a
               href="https://www.linkedin.com/in/rioprayogatejaputra/"
               target="_blank"
             >
               <FaLinkedin size={25} />
             </a>
-            <a href="https://wa.me/6285795344094" target="_blank">
-              <FaWhatsapp size={25} />
-            </a>
-            <a href="https://instagram.com/riopryogap" target="_blank">
-              <FaInstagram size={25} />
-            </a>
             <a href="https://github.com/rioprayoga23" target="_blank">
               <FaGithub size={25} />
             </a>
+            {/* <a href="https://instagram.com/riopryogap" target="_blank">
+              <FaInstagram size={25} />
+            </a> */}
           </div>
         </div>
 
