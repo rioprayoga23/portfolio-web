@@ -4,7 +4,7 @@ export const portfolioData = [
     slug: "dplk-bri",
     short_description: "DPLK BRI is a pension fund platform by Bank BRI",
     description:
-      "DPLK BRI is a pension fund platform by Bank BRI designed to help individuals and employees prepare for retirement through long-term investments.",
+      "DPLK BRI is a pension fund platform by Bank BRI that provides structured retirement planning programs for individuals and companies. It offers defined contribution pension schemes, post-employment compensation funds for active employees, and health benefit reserves.",
     img: "/dplk-bri.png",
     tech: [
       "Next.js",
