@@ -4,16 +4,14 @@ import { useSelector } from "react-redux";
 //* data
 import { navbar_data } from "@/data/navbar";
 
-//* images
-
 const MenuWeb = ({ active }) => {
   const { isActiveTheme } = useSelector((state) => state.themes);
 
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = "/RIO_PRAYOGA_TEJA_PUTRA_CV.pdf";
-    link.download = "RIO_PRAYOGA_TEJA_PUTRA_CV";
     link.target = "_blank";
+    link.rel = "noopener noreferrer";
 
     document.body.appendChild(link);
     link.click();
