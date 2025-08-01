@@ -7,7 +7,7 @@ export const experiencesData = [
   {
     role: "Frontend Engineer",
     company: "PT Gebra Kreativa Global",
-    year: "2023",
+    year: "2022",
   },
   {
     role: "Frontend Engineer",
